@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+}
+
+/* Show menu (overrides hidden styles) */
+#menu.show {
+    transform: scaleY(1);
+    opacity: 1;
+}
+@media (min-width: 768px) {
+    #menu {
+        transform: none;
+        opacity: 1;
+    }
+}
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* Adjust container width */
+    position: relative;
+    transition: transform 1s ease-in-out;
+    background:rgba(0,0,0,0.5);
+    
+    background-size: cover;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Each item takes 100% of the container width */
+    text-align: center;
+    /* transition: transform 0.5s ease, opacity 0.5s ease; */
+    opacity: 0.7; /* Dim non-focused items */
+    transform: scale(1);
+    transition: transform 6s ease-in-out, opacity 6s ease-in-out;
+}
+
+.carousel-item.focus {
+    transform: scale(1.2); /* Zoom in the focused item */
+    opacity: 1; /* Highlight focused item */
+}
+.sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+ .footer {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url("./img/rooftop-site.34b925a30ef5.jpg");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    
+}
+.services{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/network_optimization_bg.c050a1d0e569.jpg");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+.fixed{
+    background-attachment: fixed;
+}
+.contact_Us{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/home_pic2.5980664f5789.JPG");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat
+}
+
+.blog{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/blog-bg.7517d77fbd3e.jpg");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat
+}

@@ -32,7 +32,10 @@ INSTALLED_APPS = [
     #User App
     'Home',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'cloudinary_storage',
+    'cloudinary',
+    
 ]
 
 MIDDLEWARE = [
@@ -47,7 +50,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Tresinfra.urls'
-
+# WHITENOISE_ROOT = os.path.join(BASE_DIR, 'whitenoise_root')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -119,17 +122,29 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
+# DEFAULT_FILE_STORAGE ='cloudinary_storage.storage.MediaCloudinaryStorage'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # For static files in your project
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   # For production (collected static files)
 
+
+# WhiteNoise Settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-WHITENOISE_MANIFEST_STRICT = False
+# WHITENOISE_MANIFEST_STRICT = False
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -140,3 +155,8 @@ EMAIL_HOST_PASSWORD = "ccnx ilmz sltt piwn"
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 DEFAULT_CONTACT_EMAIL = "contact@gmail.com"
+CLOUDINARY_STORAGE={
+    'CLOUD_NAME':'dk9bsucmz',
+    'API_KEY':'167768518225832',
+    'API_SECRET':'pbEaQpZInExogDduBvYSRadLcs4'
+}
