@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tresinfra</title>
+    <link rel="stylesheet" href="{%static 'tailwind.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="{%static 'css/all.min.css' %}">
+    <script src="{% static 'jquery.js' %}"></script>
+</head>
+<body class="flex flex-col relative">
+    <section class="sticky top-0 z-50 bg-white sticky-container ">{% include './Sections/navbar.html' %}</section>
+    {% block Content %}{% endblock Content %}
+</body>
+<script src="{% static 'js/all.min.js' %}"></script>
+
+</html>

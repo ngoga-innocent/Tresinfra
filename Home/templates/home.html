@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block Content %}
+<div class="relative min-h-screen font-sans">
+   
+<section id="hero_section">{% include './Sections/HeroSection.html' %}</section>
+<section id="learn_more" class="learn_more">
+   {% include './Sections/LearnMore.html' %}
+</section>
+<section>
+   {% include './Sections/Ourservices.html' %}
+</section>
+<section class="relative min-h-screen">
+   {% include './Sections/Connect.html' %}
+</section>
+
+<img src="{% static 'img/towesky.jpg' %}" class="w-screen h-[50vh]" alt="">
+<section id="testimonials">
+   {% include './Sections/Success.html' %}
+</section>
+<section>
+   {% include './Sections/Blog.html' %}
+</section>
+<section>
+   {% include './Sections/footer.html' %}
+</section>
+</div>
+{% endblock Content %}

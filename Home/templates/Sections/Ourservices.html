@@ -1,0 +1,31 @@
+<section class="w-full md:h-screen md:items-center py-5 flex flex-col gap-y-3 text-center bg-gradient-to-b from-sky-700 via-sky-800 to-sky-950">
+  {% if services %}
+  <div class="md:my-9 gap-y-3">
+    <h1 class="text-lg font-bold text-white">Here we present you Our Services</h1>
+    <p class="text-white">
+      Experience unparalleled satisfaction with our comprehensive range of
+      premium services.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-y-3 md:w-[70%] w-[90%] mx-auto">
+    {% for service in services %}
+    <div
+      class="flex flex-col text-center bg-white rounded-md px-2 py-5 my-2 shadow-sm shadow-black items-center justify-center gap-y-5"
+    >
+      <div class="h-14 w-14 max-w-14 max-h-14 overflow-hidden rounded-full">
+        <img
+          src="{{service.image.url}}"
+          class="h-[100%] w-[100%] rounded-full object-contain"
+          alt=""
+        />
+      </div>
+      <h2 class="font-bold">{{ service.title }} </h2>
+      <p>{{service.subtitle}}</p>
+
+      <button class="bg-orange-600 text-white text-bold py-3 px-5 rounded-full">Read More</button>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% endif %}
+</section>

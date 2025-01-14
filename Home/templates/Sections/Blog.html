@@ -1,0 +1,48 @@
+{% load static %}
+<section class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Thought Leadership</h1>
+        <a href="#" class="text-red-500 hidden md:flex font-medium hover:underline">
+            Read More in Our Media Hub →
+        </a>
+    </div>
+
+    <!-- Blog Section -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-x-12">
+        <!-- Featured Blog -->
+         {% if  featured_blog %}
+         <div class="md:col-span-2 relative">
+            <img src="{{featured_blog.image.url}}" alt="Featured Blog" class="w-full h-64 object-cover rounded-lg">
+            <div class=" p-6  rounded-lg">
+                <p class="text-sm text-gray-500">
+                    {% for tag in featured_blog.tags %}
+                    <span class="inline-block border border-gray-300 text-gray-600 px-3 py-1 rounded-full mr-2">{{ tag }}</span>
+                    {% endfor %}
+                </p>
+                <h2 class=" font-bold">{{featured_blog.title}}</h2>
+                <p class="text-gray-300 mt-2">{{featured_blog.date}}</p>
+            </div>
+        </div>
+         {% endif %}
+        
+
+        <!-- Other Blogs -->
+        <div class="flex md:col-span-4 flex-col space-y-6">
+            {% for blog in other_blogs %}
+            <div class="flex flex-col">
+                <p class="text-sm text-gray-500">
+                    {% for tag in blog.tags %}
+                    <span class="inline-block border border-gray-300 text-gray-600 px-3 py-1 rounded-full mr-2">{{ tag }}</span>
+                    {% endfor %}
+                </p>
+                <h3 class="my-1 font-bold text-gray-800 hover:text-red-500">
+                    {{ blog.title }}
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">{{ blog.date }}</p>
+                <div class="border-t mt-2"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

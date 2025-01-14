@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block Content %}
+<section>
+    <div class="h-[70vh] flex flex-col items-center justify-center blog">
+        <h1 class="text-4xl font-bold text-center text-white mb-8">Our Blogs</h1>
+    </div>
+    <div class="container mx-auto py-12">
+        
+    
+        <!-- Blog Filters -->
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <label for="filter" class="mr-2 font-medium">Category:</label>
+                <select id="filter" class="px-4 py-2 border rounded-lg">
+                    <option value="all">All</option>
+                    {% for blog in blogs %}
+                    <option value="{{ blog.category }}">{{ blog.category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    
+        <!-- Blog Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for blog in blogs %}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="h-48 w-full object-cover">
+                <div class="p-4">
+                    <p class="text-sm text-gray-500">{{ blog.date }}</p>
+                    <h2 class="text-lg font-bold text-gray-800 mt-2">{{ blog.title }}</h2>
+                    <p class="text-sm text-gray-600 mt-1">Category: {{ blog.category }}</p>
+                    <div class="flex space-x-2 mt-2">
+                        {% for tag in blog.tags %}
+                        <span class="text-xs text-gray-600 bg-gray-200 px-2 py-1 rounded-full border border-gray-300">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <p class="text-sm text-gray-700 mt-4">{{ blog.description|truncatechars:150|safe }}</p>
+                    <a href="/blogs/{{ blog.slug }}/" class="block mt-4 hover:text-white font-medium border border-red-600 rounded-full hover:bg-red-600 transition-all duration-3000 w-fit px-3 py-2">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% include './Sections/footer.html' %}
+{% endblock Content %}

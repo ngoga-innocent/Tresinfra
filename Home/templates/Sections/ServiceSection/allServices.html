@@ -1,0 +1,11 @@
+<section class="grid md:grid-cols-3 grid-cols-1 max-w-7xl px-4 py-7 gap-8 md:max-w-7xl mx-auto md:py-24">
+    {% for service in services %}
+        <div class="flex flex-col gap-y-1 bg-white items-center md:items-auto  group hover:bg-red-600 hover:text-white transition-all border border-gray-300 px-4 py-5 rounded-md duration-500">
+            <div class="w-14 h-14 rounded-full overflow-hidden bg-red-600">
+                <img src="{{ service.image.url }}" alt="{{ service.title }}" class="h-[100%] w-[100%] rounded-lg object-cover" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-white font-bold">{{ service.title }}</h3>
+            <p class="text-gray-600 group-hover:text-white">{{ service.subtitle }}</p>
+        </div>
+    {% endfor %}
+</section>

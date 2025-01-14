@@ -1,0 +1,12 @@
+{% load static %}
+<div class="flex md:flex-row flex-col-reverse h-fit md:h-screen w-[90%] mx-auto md:gap-x-10 my-4 md:my-10 items-center ">
+    <div class="flex-1 md:w-[40vw] w-[80vw] relative">
+        
+        <img src="{% static 'img/base-tower.jpg' %}" class="md:h-[60vh] h-[35vh] w-full" alt="">
+    </div>
+    <div class="md:w-[40vw] w-[100vw] flex flex-col items-center">
+        <img src="{% static 'img/worldmap.svg' %}" class="h-[20vh] md:w-[80%]" alt="">
+        <p>We are empowering our partners and customers to connect people, create opportunities and build communities in a responsible, equitable and sustainable way.</p>
+        <a href="{% url 'services' %}" class="flex flex-row items-center  px-4 my-4 py-2 w-fit rounded-md  hover:bg-red-600 transition-all duration-5000 text-red-600 hover:text-white border border-gray-100">Discover Our Services <i class="fa fa-arrow-right mx-2" aria-hidden="true"></i></a>
+    </div>
+</div>

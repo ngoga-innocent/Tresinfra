@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+}
+
+/* Show menu (overrides hidden styles) */
+#menu.show {
+    transform: scaleY(1);
+    opacity: 1;
+}
+@media (min-width: 768px) {
+    #menu {
+        transform: none;
+        opacity: 1;
+    }
+}
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* Adjust container width */
+    position: relative;
+    transition: transform 1s ease-in-out;
+    background:rgba(0,0,0,0.5);
+    /* background-image: url('../static/img/wave.svg'); */
+    background-size: cover;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Each item takes 100% of the container width */
+    text-align: center;
+    /* transition: transform 0.5s ease, opacity 0.5s ease; */
+    opacity: 0.7; /* Dim non-focused items */
+    transform: scale(1);
+    transition: transform 6s ease-in-out, opacity 6s ease-in-out;
+}
+
+.carousel-item.focus {
+    transform: scale(1.2); /* Zoom in the focused item */
+    opacity: 1; /* Highlight focused item */
+}
+.sticky-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+ 

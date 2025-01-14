@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block Content %}
+
+<section class="relative bg-cover bg-center min-h-[70vh] h-[70vh]" style="background-image: url('/static/img/tower-bg1.jpg');background-attachment: fixed;">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  
+    <!-- Content -->
+    <div class="relative container mx-auto py-32 text-center text-white">
+      <div class="flex items-center justify-center mb-8">
+        <span class="h-8 w-1 bg-red-600 mr-4"></span>
+        <h1 class="text-4xl font-bold">Why Tres</h1>
+      </div>
+      <p class="text-lg">Empowering the world's communications infrastructure.</p>
+    </div>
+  
+    <!-- Slanted Shape -->
+    
+  </section>
+  <section>
+    {% include './Sections/AboutSections/Values.html' %}
+</section>
+<section>
+    {% include './Sections/AboutSections/Policy.html' %}
+ </section>
+<section>
+    {% include './Sections/footer.html' %}
+ </section>
+ 
+  {% endblock Content %}

@@ -1,0 +1,61 @@
+<section id="project-section" class="py-12">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-6">Our <span class="text-primary">Recent</span> Success</h2>
+      <div class="text-center mb-4">
+        <button class="category-btn" data-category="all">Show All</button>
+        <button class="category-btn" data-category="recognitions">Recognitions</button>
+        <button class="category-btn" data-category="projects">Projects</button>
+        <button class="category-btn" data-category="material_supply">Material Supply</button>
+      </div>
+      <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {% for project in achievements %}
+        <div class="relative group bg-white shadow rounded overflow-hidden">
+            <img src="{{project.image.url}}" alt="{{ achievement.title }}" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black bg-opacity-50 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div class="text-center text-white px-4">
+                  <h3 class="text-lg font-semibold mb-2">{{ project.title }}</h3>
+                  {% comment %} <p class="text-sm">{{ achievement.description }}</p> {% endcomment %}
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      const projectsContainer = document.getElementById('projects-container');
+  
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const category = this.getAttribute('data-category');
+          
+          // Send AJAX request
+          fetch(`/filter-projects/?category=${category}`)
+            .then(response => response.json())
+            .then(data => {
+              // Clear the container    
+              console.log(data)
+              projectsContainer.innerHTML = '';
+  
+              // Add projects to the container
+              data.forEach(project => {
+                projectsContainer.innerHTML += `
+                  <div class="relative group bg-white shadow rounded overflow-hidden">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                      <h3 class="text-lg font-semibold">${project.title}</h3>
+                      
+                      
+                    </div>
+                  </div>
+                `;
+              });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+      });
+    });
+  </script>
+    

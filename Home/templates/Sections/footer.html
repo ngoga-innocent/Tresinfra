@@ -1,0 +1,59 @@
+{% load static %}
+<footer class="footer">
+    <!-- Overlay -->
+    {% comment %} <div class="absolute inset-0 bg-black bg-opacity-60"></div> {% endcomment %}
+
+    <!-- Content Wrapper -->
+    <div class="relative z-10 container mx-auto px-6 py-16">
+        <!-- Top Section -->
+        <div class="flex flex-col items-center text-white text-center">
+            <h1 class="md:text-4xl font-bold mb-4">Let’s Grow Together</h1>
+            <div class="flex space-x-4">
+                <a href="{% url 'contact' %}" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md flex items-center">
+                    Contact Us
+                    <span class="ml-2">&rarr;</span>
+                </a>
+                <a href="/careers" class="border border-red-600 text-red-600 hover:text-white hover:bg-red-600 px-6 py-3 rounded-md flex items-center">
+                    Join Our Team
+                    <span class="ml-2">&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-center md:text-auto text-white">
+            <!-- Logo and Address -->
+            <div class="flex flex-col items-center md:items-start">
+                <img src="{% static 'img/logo.png' %}" alt="Logo" class="h-12 mb-4">
+                <p>Kigali-Rwanda</p>
+                <p>, 11th Floor</p>
+                <p>P, MA 02116</p>
+                <p>617-375-7500</p>
+                <a href="#" class="mt-4 text-gray-400 hover:text-white">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- About Us -->
+            <div class="hidden md:flex flex-col">
+                <h2 class="text-xl font-bold mb-4">About Us</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Our History</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Vision, Mission and Core Principles</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Careers at American Tower</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="hidden md:flex flex-col">
+                <h2 class="text-xl font-bold mb-4">Quick Links</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Executive Blog</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Investor Relations</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Media Relations</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,58 @@
+{% load static %}
+<div class="carousel-container relative overflow-hidden w-full h-screen min-h-screen max-h-screen">
+    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+        <!-- Carousel items -->
+         {% if carousel %}
+            {% for item in carousel %}
+            <div class="carousel-item flex-shrink-0 w-full h-full relative">
+                <img src="{{item.image.url}}" alt="{{item.title}}" class="object-cover w-full h-full">
+            </div>{% endfor %}
+         {% endif %}
+        
+        
+    </div>
+    <div class="absolute flex flex-col md:top-[40vh] top-[30vh] z-50 left-[10vw]">
+       <div class="md:w-[40vw] w-[80vw] flex flex-col gap-y-4 md:gap-y-10 text-white">
+        <h1 class="md:text-4xl text-2xl text-white font-bold">A Global Provider of Digital Communications Infrastructure</h1>
+        <p>Tres offers solutions and services to deploy and support wireless networks in 24 countries across six continents.</p>
+       </div>
+       <div class="flex flex-row items-center gap-x-5 my-6 ">
+        <a href="{% url 'contact' %}" class="flex flex-row items-center md:py-3 py-1 w-fit md:px-10 px-3 gap-x-2  rounded-full bg-red-700 hover:opacity-60 transition-all duration-5000 text-white">Contact Us <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="{% url 'about_us' %}" class="flex flex-row items-center md:py-3 py-1 w-fit md:px-10 px-3 gap-x-2  rounded-full border border-red-600 hover:bg-red-700 hover:opacity-60 transition-all duration-5000 text-white">Learn More <i class="fa fa-arrow-right rotate-45" aria-hidden="true"></i></a>
+       </div>
+    </div>
+    
+</div>
+<script>
+    $(document).ready(function () {
+        const $carousel = $('#carousel'); // The carousel container
+        const $items = $('.carousel-item'); // Carousel items
+        let currentIndex = 0; // Current active item index
+    
+        // Function to update the carousel
+        function updateCarousel() {
+            // Remove "focus" class from all items
+            $items.removeClass('focus');
+    
+            // Add "focus" class to the current item
+            $items.eq(currentIndex).addClass('focus');
+    
+            // Update carousel position
+            const offset = -currentIndex * 100; // Assume each item is 100% of the container width
+            $carousel.css('transform', `translateX(${offset}%)`);
+        }
+    
+        // Move to the next slide
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % $items.length; // Loop back to the start
+            updateCarousel();
+        }
+    
+        // Auto-play the carousel
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    
+        // Initialize carousel
+        updateCarousel();
+    });
+    
+</script>
