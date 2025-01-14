@@ -41,7 +41,7 @@ def filter_projects(request):
     ]
     return JsonResponse(project_list, safe=False)
 def About_us(request):
-    return render(request, './about_us.html')
+    return render(request, './About_us.html')
 def Services(request):
     service=OurService.objects.all().order_by('-created_at')
     return render(request, './services.html',{'services':service})
