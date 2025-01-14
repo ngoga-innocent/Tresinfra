@@ -51,4 +51,33 @@
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  }
- 
+ .footer {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url('../static/img/rooftop-site.jpg');
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    
+}
+.services{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../static/img/network_optimization_bg.jpg');
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+.fixed{
+    background-attachment: fixed;
+}
+.contact_Us{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../static/img/home_pic2.JPG');
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat
+}
+
+.blog{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../static/img/blog-bg.jpg');
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat
+}
