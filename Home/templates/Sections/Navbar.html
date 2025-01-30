@@ -1,7 +1,7 @@
 {% load static %}
-<div class="sticky top-0 z-50 flex flex-row justify-between items-center md:px-10 px-3">
+<div class="top-0 z-50 relative flex flex-row md:gap-x-12  justify-between md:justify-center bg-white md:bg-transparent w-screen items-center md:px-10 px-3">
     <!-- Logo Section -->
-    <div>
+    <div class="md:absolute top-0 left-0">
         <a href="{% url 'homepage' %}">
             <img src="{% static 'img/logo.png' %}" alt="Tresinfra" class="h-20 w-20">
         </a>
@@ -18,13 +18,92 @@
         </div>
 
         <!-- Navigation Links -->
-        <ul id="menu" class=" flex flex-col gap-y-3 py-4  md:flex-row gap-x-4 md:gap-x-4 absolute md:static bg-white md:bg-transparent top-16 md:top-auto left-0 w-full md:w-auto shadow md:shadow-none my-4">
-            <li><a href="{% url 'homepage' %}" class="px-4 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'homepage' %} text-red-700 {% endif %}">Home</a></li>
-            <li><a href="{% url 'about_us' %}" class="px-4 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'about_us' %} text-red-700 {% endif %}">About</a></li>
-            <li><a href="{% url 'services' %}" class="px-4 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'services' %} text-red-700 {% endif %}">Services</a></li>
-            <li><a href="{% url 'contact' %}" class="px-4 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'contact' %} text-red-700 {% endif %}">Contact</a></li>
-            <li><a href="{% url 'esg' %}" class="px-4 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'esg' %} text-red-700 {% endif %}">Impact & Esg</a></li>
-            <li><a href="{% url 'blog_list' %}" class="px-4 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'blog_list' %} text-red-700 {% endif %}">Blogs</a></li>
+        <ul id="menu" class=" flex flex-col gap-y-3 py-4 md:gap-y-0 py-0  md:flex-row  absolute md:static bg-heading md:bg-transparent top-16 md:top-0 left-0 w-full md:w-auto shadow md:shadow-none my-4 md:my-0">
+            <li class="flex flex-col items-center group">
+                <div class="h-7 w-[2px] absolute top-0  {% if request.resolver_match.url_name == 'homepage' %} bg-red-700 {% else %}bg-white {% endif %}"></div>
+                <a href="{% url 'homepage' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'homepage' %} text-red-700 {% endif %}">Home</a></li>
+            <li class="flex flex-col items-center group">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <button id="about-toggle" class="uppercase px-2 py-2 hover:text-red-700  {% if request.resolver_match.url_name == 'about_us' %} text-red-700  {% endif %}">About</button>
+                <ul style="z-index: 1000;" id="about-menu" class="about_navs flex flex-col gap-y-2 items-start opacity-0 scale-y-0 max-h-0 overflow-hidden group-hover:max-h-fit group-hover:scale-y-100 origin-top group-hover:opacity-100 transition-all duration-500 ease-in-out self-center">
+                    <li>
+                        <a class="hover:text-orange-600 transition-all ease-in-out" href="{% url 'about_us' %}">Our Beginnings</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'about_us' %}#vision">Vision</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'about_us' %}#mission">Mission</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'about_us' %}#policy">What we do</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#">How we work</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'about_us' %}#team">Leadership Team</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'about_us' %}#team">Board of Directors</a>
+                    </li>
+                </ul>
+                
+                
+            </li>
+            <li class="flex flex-col items-center">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'our_markets' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'our_markets' %} text-red-700 {% endif %}">Our Markets</a>
+            </li>
+            <li class="flex flex-col items-center group">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <button id="solution-toggle" class="uppercase px-2 py-2 hover:text-red-700  {% if request.resolver_match.url_name == 'solutions' %} text-red-700 {% endif %}">Solutions</button>
+                <ul style="z-index: 1000;" id="solution-menu" class="solution_navs flex flex-col gap-y-2 items-start opacity-0 scale-y-0 max-h-0 overflow-hidden group-hover:scale-y-100 group-hover:max-h-fit origin-top group-hover:opacity-100 transition-all duration-500 ease-in-out self-center">
+                    <li>
+                        <a class="hover:text-orange-600 transition-all ease-in-out" href="{% url 'solutions' %}#built_to_suit">Built-to-suit</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#lite_built_to_suit">Lite Built-to-suit</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#colocation">Colocation</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#lite-colocation">Lite Collocation</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#ibs">In Building Solutions</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#fiber-facility">Fiber facility</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#caas">Coverage as a Service(caas)</a>
+                    </li>
+                    <li>
+                        <a class="link" href="{% url 'solutions' %}#flex-tower">Flex Tower</a>
+                    </li>
+                </ul>
+                
+                
+            </li>
+            <li class="flex flex-col items-center">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'whistle_blowing' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'whistle_blowing' %} text-red-700 {% endif %}">Whistle Blowing</a>
+            </li>
+            <li class="flex flex-col items-center">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'join_team' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'join_team' %} text-red-700 {% endif %}">Join Our Team</a>
+            </li>
+            <li class="flex flex-col items-center">
+                <div class=" absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'contact' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'contact' %} text-red-700 {% endif %}">Contact</a></li>
+            <li class="flex flex-col items-center">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'esg' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'esg' %} text-red-700 {% endif %}">Impact & Esg</a></li>
+            <li class="flex flex-col items-center">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'blog_list' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'blog_list' %} text-red-700 {% endif %}">Blogs</a></li>
         </ul>
     </div>
 </div>
@@ -50,30 +129,40 @@
         
     });
 </script>
-{% comment %} <script>
-    // Ensure script runs after DOM content is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-    
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('show'); // Toggle the menu
-    
-            // Toggle visibility of icons
-            if (menu.getAttribute('class').includes('show')) {
-                console.log('Toggling visibility of icons')
-                menuIcon.classList.add('hidden');
-                
-            } else {
-                closeIcon.classList.add('hidden');
-                closeIcon.classList.remove('flex');
-                menuIcon.classList.add('flex');
-                menuIcon.classList.remove('hidden');
-            }
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const aboutToggle = document.getElementById("about-toggle");
+        const aboutMenu = document.getElementById("about-menu");
+
+        aboutToggle.addEventListener("click", () => {
+            aboutMenu.classList.toggle(" opacity-0");
+            aboutMenu.classList.toggle("scale-y-0");
+            aboutMenu.classList.toggle("max-h-0");
+           
         });
     });
-    
-    
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const solutionToggle = document.getElementById("solution-toggle");
+        const solutionMenu = document.getElementById("solution-menu");
+
+        solutionToggle.addEventListener("click", () => {
+            solutionMenu.classList.toggle(" opacity-0");
+            solutionMenu.classList.toggle("scale-y-0");
+            solutionMenu.classList.toggle("max-h-0");
+           
+        });
+    });
+</script>
+{% comment %} <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const aboutToggle = document.getElementById("about-toggle");
+        const aboutMenu = document.getElementById("about-menu");
+
+        aboutToggle.addEventListener("click", () => {
+            aboutMenu.classList.toggle("opacity-0");
+            aboutMenu.classList.toggle("scale-y-0");
+        });
+    });
 </script> {% endcomment %}

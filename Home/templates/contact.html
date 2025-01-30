@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block Content %}
 <div
-  class="h-[80vh] w-full text-white relative fixed bg-cover flex flex-col justify-center contact_Us"
+  class="h-[80vh] min-h-[60vh] w-full text-white relative fixed bg-cover flex flex-col justify-center contact_Us"
 >
   <div class="mx-20 text-start flex flex-col gap-y-8">
     <h1 class="text-3xl text-white font-bold">Get in Touch With Our Team</h1>
@@ -15,145 +15,8 @@
     </button>
   </div>
 </div>
-<div class="flex flex-col md:flex-row items-center max-w-7xl mx-auto gap-x-3">
-  <div class="mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold text-center text-gray-800 mb-4">
-      How Can We Help?
-    </h1>
-    {% if messages %}
-    <div class="mb-4">
-      {% for message in messages %}
-      <div
-        class="p-4 rounded-md text-green-800 bg-green-100 border border-green-300"
-      >
-        {{ message }}
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    <p class="text-center text-gray-600 mb-6">
-      Please fill out the form below, and we'll get back to you promptly!
-    </p>
-
-    <form method="post" action="{% url 'contact' %}" class="space-y-4">
-      {% csrf_token %}
-
-      <!-- Area of Interest -->
-      <div>
-        <label
-          for="id_area_of_interest"
-          class="block text-sm font-medium text-gray-700"
-          >Area of Interest</label
-        >
-        {{ form.area_of_interest }} {% if form.area_of_interest.errors %}
-        <p class="text-sm text-red-500 mt-1">
-          {{ form.area_of_interest.errors|striptags }}
-        </p>
-        {% endif %}
-      </div>
-
-      <!-- Email -->
-      <div>
-        <label for="id_email" class="block text-sm font-medium text-gray-700"
-          >Email</label
-        >
-        {{ form.email }} {% if form.email.errors %}
-        <p class="text-sm text-red-500 mt-1">
-          {{ form.email.errors|striptags }}
-        </p>
-        {% endif %}
-      </div>
-
-      <!-- Phone Number and Company -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label
-            for="id_phone_number"
-            class="block text-sm font-medium text-gray-700"
-            >Phone Number</label
-          >
-          {{ form.phone_number }} {% if form.phone_number.errors %}
-          <p class="text-sm text-red-500 mt-1">
-            {{ form.phone_number.errors|striptags }}
-          </p>
-          {% endif %}
-        </div>
-        <div>
-          <label
-            for="id_company"
-            class="block text-sm font-medium text-gray-700"
-            >Company (Optional)</label
-          >
-          {{ form.company }} {% if form.company.errors %}
-          <p class="text-sm text-red-500 mt-1">
-            {{ form.company.errors|striptags }}
-          </p>
-          {% endif %}
-        </div>
-      </div>
-
-      <!-- First Name and Last Name -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label
-            for="id_first_name"
-            class="block text-sm font-medium text-gray-700"
-            >First Name</label
-          >
-          {{ form.first_name }} {% if form.first_name.errors %}
-          <p class="text-sm text-red-500 mt-1">
-            {{ form.first_name.errors|striptags }}
-          </p>
-          {% endif %}
-        </div>
-        <div>
-          <label
-            for="id_last_name"
-            class="block text-sm font-medium text-gray-700"
-            >Last Name</label
-          >
-          {{ form.last_name }} {% if form.last_name.errors %}
-          <p class="text-sm text-red-500 mt-1">
-            {{ form.last_name.errors|striptags }}
-          </p>
-          {% endif %}
-        </div>
-      </div>
-
-      <!-- Message -->
-      <div>
-        <label for="id_message" class="block text-sm font-medium text-gray-700"
-          >Message</label
-        >
-        {{ form.message }} {% if form.message.errors %}
-        <p class="text-sm text-red-500 mt-1">
-          {{ form.message.errors|striptags }}
-        </p>
-        {% endif %}
-      </div>
-
-      <!-- Submit Button -->
-      <div>
-        <button
-          type="submit"
-          class="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-500" 
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-  <div class="w-[40vw] md:w-[80vw] mx-auto">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4975050895405!2d30.090104675216637!3d-1.9543502980279406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6f4630e5507%3A0x75a0f9adcfddc9e4!2sRadisson%20Blu%20Hotel%20%26%20Convention%20Centre%2C%20Kigali!5e0!3m2!1sen!2srw!4v1736834308182!5m2!1sen!2srw"
-      class="h-[80vh] w-[100%]"
-      
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</div>
+{% include './Sections/ContactUsSections/contact.html' %}
+{% include './Sections/ContactUsSections/ContactForm.html' %}
+{% include './Sections/WhistleBlwoing/follow_us.html' %}
 <section>{% include './Sections/footer.html' %}</section>
 {% endblock Content %}

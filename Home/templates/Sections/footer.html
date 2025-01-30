@@ -1,59 +1,37 @@
 {% load static %}
-<footer class="footer">
-    <!-- Overlay -->
-    {% comment %} <div class="absolute inset-0 bg-black bg-opacity-60"></div> {% endcomment %}
+<footer style="background-color: #253746;" class="relative w-full py-12 flex flex-col w-full items-center justify-center">
+    <!-- Decorative Elements (Hidden on Small Screens) -->
+    <div class="w-[10vw] absolute -right-4 top-[50%] opacity-80 h-2 rounded-full bg-my_orange hidden md:block"></div>
+    <div class="w-[6vw] absolute -right-4 top-[60%] opacity-80 h-2 rounded-full bg-zinc-300 hidden md:block"></div>
+    <div class="w-[14vw] absolute -right-4 top-[70%] opacity-80 h-2 rounded-full bg-my_orange hidden md:block"></div>
 
-    <!-- Content Wrapper -->
-    <div class="relative z-10 container mx-auto px-6 py-16">
-        <!-- Top Section -->
-        <div class="flex flex-col items-center text-white text-center">
-            <h1 class="md:text-4xl font-bold mb-4">Let’s Grow Together</h1>
-            <div class="flex space-x-4">
-                <a href="{% url 'contact' %}" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md flex items-center">
-                    Contact Us
-                    <span class="ml-2">&rarr;</span>
-                </a>
-                <a href="/careers" class="border border-red-600 text-red-600 hover:text-white hover:bg-red-600 px-6 py-3 rounded-md flex items-center">
-                    Join Our Team
-                    <span class="ml-2">&rarr;</span>
-                </a>
-            </div>
-        </div>
+    <div class="w-[90%] mx-auto flex flex-col  divide-y divide-gray-600 gap-y-4">
+        <!-- Responsive Navigation List -->
+        <ul class="flex flex-wrap flex-row w-[100%] mx-auto items-center justify-center gap-3 justify-center md:justify-center text-sm text-white text-center md:text-left overflow-x-auto whitespace-nowrap">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'about_us' %}">About us</a></li>
+            <li><a href="{% url 'our_markets' %}">Our Markets</a></li>
+            <li><a href="{% url 'solutions' %}">Solutions</a></li>
+            {% comment %} <li><a href="#">Sustainability</a></li> {% endcomment %}
+            <li><a href="{% url 'join_team' %}">Join Our team</a></li>
+            <li><a href="{% url 'blog_list' %}">Media</a></li>
+            {% comment %} <li><a href="#">FAQS</a></li> {% endcomment %}
+            <li><a href="{% url 'whistle_blowing' %}">WhistleBlower</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+            {% comment %} <li><a href="#">Brand Guidelines</a></li> {% endcomment %}
+            {% comment %} <li><a href="#">Documents</a></li> {% endcomment %}
+            {% comment %} <li><a href="#">Privacy Notice</a></li> {% endcomment %}
+            
+            <!-- Social Media Icons -->
+            <li class="flex gap-2 justify-center md:justify-center">
+                <a href="#"><img src="{% static 'img/twitter.png' %}" class="w-5 h-5" alt="Twitter"></a>
+                <a href="#"><img src="{% static 'img/linkedin.png' %}" class="w-5 h-5" alt="LinkedIn"></a>
+            </li>
+        </ul>
 
-        <!-- Bottom Section -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-center md:text-auto text-white">
-            <!-- Logo and Address -->
-            <div class="flex flex-col items-center md:items-start">
-                <img src="{% static 'img/logo.png' %}" alt="Logo" class="h-12 mb-4">
-                <p>Kigali-Rwanda</p>
-                <p>, 11th Floor</p>
-                <p>P, MA 02116</p>
-                <p>617-375-7500</p>
-                <a href="#" class="mt-4 text-gray-400 hover:text-white">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-
-            <!-- About Us -->
-            <div class="hidden md:flex flex-col">
-                <h2 class="text-xl font-bold mb-4">About Us</h2>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Our History</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Vision, Mission and Core Principles</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Careers at American Tower</a></li>
-                </ul>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="hidden md:flex flex-col">
-                <h2 class="text-xl font-bold mb-4">Quick Links</h2>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-white">Executive Blog</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Investor Relations</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Media Relations</a></li>
-                </ul>
-            </div>
-        </div>
+        <!-- Copyright Text -->
+        <p class="text-white text-xs text-center md:text-center uppercase bottom-0 py-2">
+            © COPYRIGHT 2025 - ALL RIGHTS RESERVED TRES.COM
+        </p>
     </div>
 </footer>

@@ -50,4 +50,25 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title        
-     
+class Team(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='team/')
+    position = models.CharField(max_length=200)
+    other_position=models.CharField(max_length=200,null=True,blank=True)
+    board_member=models.BooleanField(default=False)
+    def __str__(self):
+        return self.name
+class MisconductReport(models.Model):
+    anonymous = models.BooleanField(default=False)
+    names=models.CharField(null=True,blank=True,max_length=255)
+    email = models.EmailField(max_length=255,null=True, blank=True)
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    country = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    case_details = models.TextField()
+    evidence = models.FileField(upload_to="evidence/", blank=True, null=True)
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Report from {self.city}, {self.country} (Anonymous: {self.anonymous})"
+    

@@ -1,59 +1,194 @@
 {% load static %}
-<div class="carousel-container relative overflow-hidden w-full h-screen min-h-screen max-h-screen">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-        <!-- Carousel items -->
-         {% if carousel %}
-            {% for item in carousel %}
-            <div class="carousel-item flex-shrink-0 w-full h-full relative">
-                <img src="{{item.image.url}}" alt="{{item.title}}" class="object-cover w-full h-full">
-            </div>{% endfor %}
-         {% endif %}
-        
-        
+<div class="h-screen max-h-screen md:h-[90vh] w-screen max-w-screen md:max-h-[90vh] overflow-hidden relative">
+  <!-- Gradient Overlay -->
+  <div style="z-index: 90; opacity: 0.1;" class="absolute w-full h-full inset-0 bg-gradient-to-b from-black to-white"></div>
+
+  <!-- Carousel Container -->
+  <div id="carousel" class="slick flex transition-transform duration-500 ease-in-out">
+    {% if carousel %}
+      {% for item in carousel %}
+        <div class="w-full h-screen md:h-full relative">
+          <img src="{{ item.image.url }}" alt="{{ item.title }}" class="object-cover w-full h-full" />
+          
+          <!-- Text Content (Initially Hidden) -->
+          <div class="content flex flex-col gap-y-2 absolute z-50 top-[30vh] left-[10vw] md:left-[30vw] hidden">
+            <div style="z-index: 1000;" class="flex flex-col space-y-2">
+              <h1 class="font-bold text-white w-[80vw] md:w-[35vw] text-wrap text-2xl md:text-4xl">{{ item.title }}</h1>
+              <p class="text-white font-bold text-lg w-[90vw] md:w-[50vw] text-wrap">{{ item.subtitle }}</p>
+            </div>
+            <a href="#" class="bg-orange-300 w-fit py-2 px-4 rounded-full text-white">Learn More</a>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <!-- Random Bars Container -->
+  <div class="absolute top-[30vh] left-[10vw] opacity-40 md:opacity-auto md:flex flex-row">
+    <div class="relative">
+      <div id="random-bars" class="relative"></div>
     </div>
-    <div class="absolute flex flex-col md:top-[40vh] top-[30vh] z-50 left-[10vw]">
-       <div class="md:w-[40vw] w-[80vw] flex flex-col gap-y-4 md:gap-y-10 text-white">
-        <h1 class="md:text-4xl text-2xl text-white font-bold">A Global Provider of Digital Communications Infrastructure</h1>
-        <p>Tres offers solutions and services to deploy and support wireless networks in 24 countries across six continents.</p>
-       </div>
-       <div class="flex flex-row items-center gap-x-5 my-6 ">
-        <a href="{% url 'contact' %}" class="flex flex-row items-center md:py-3 py-1 w-fit md:px-10 px-3 gap-x-2  rounded-full bg-red-700 hover:opacity-60 transition-all duration-5000 text-white">Contact Us <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        <a href="{% url 'about_us' %}" class="flex flex-row items-center md:py-3 py-1 w-fit md:px-10 px-3 gap-x-2  rounded-full border border-red-600 hover:bg-red-700 hover:opacity-60 transition-all duration-5000 text-white">Learn More <i class="fa fa-arrow-right rotate-45" aria-hidden="true"></i></a>
-       </div>
-    </div>
-    
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="slide absolute bottom-5 left-[10vw] md:left-[29vw] transform z-10 -rotate-90 flex flex-row text-red-700 text-xs font-bold">scroll</div>
 </div>
+
+<!-- CSS -->
+<style>
+  /* Vertical Dots */
+  .slick-dots {
+    position: absolute;
+    bottom: 36%;
+    left: 10vw; /* Adjusted for responsiveness */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  /* Slide-in Animation */
+  @keyframes slideIn {
+    from {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-bar {
+    animation: slideIn 1s ease-in-out forwards;
+  }
+
+  /* Slick Dots Customization */
+  .slick-dots li {
+    margin: 0;
+    width: 10px;
+    height: 10px;
+  }
+
+  .slick-dots li button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    opacity: 0.7;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .slick-dots li.slick-active button {
+    background-color: #ef4444;
+    opacity: 1;
+  }
+
+  /* Fade-in Effect for Content */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Adjustments for Small Screens */
+  @media (max-width: 768px) {
+    .slick-dots {
+      left: 5px;
+    }
+
+    .slick-dots li button {
+      width: 10px;
+      height: 10px;
+    }
+
+    .content {
+      top: 20vh; /* Adjust position for smaller screens */
+      left: 5vw;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<!-- JavaScript -->
 <script>
-    $(document).ready(function () {
-        const $carousel = $('#carousel'); // The carousel container
-        const $items = $('.carousel-item'); // Carousel items
-        let currentIndex = 0; // Current active item index
-    
-        // Function to update the carousel
-        function updateCarousel() {
-            // Remove "focus" class from all items
-            $items.removeClass('focus');
-    
-            // Add "focus" class to the current item
-            $items.eq(currentIndex).addClass('focus');
-    
-            // Update carousel position
-            const offset = -currentIndex * 100; // Assume each item is 100% of the container width
-            $carousel.css('transform', `translateX(${offset}%)`);
+  $(document).ready(function () {
+    $('#carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      cssEase: 'linear',
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            dots: true
+          }
         }
-    
-        // Move to the next slide
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % $items.length; // Loop back to the start
-            updateCarousel();
-        }
-    
-        // Auto-play the carousel
-        setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    
-        // Initialize carousel
-        updateCarousel();
+      ]
     });
-    
+
+    // Fade-in Animation for Slide Content
+    $('#carousel').on('afterChange', function (event, slick, currentSlide) {
+      $('.content').removeClass('fade-in').addClass('hidden');
+      const currentContent = $(`.slick-slide[data-slick-index="${currentSlide}"] .content`);
+      setTimeout(() => {
+        currentContent.removeClass('hidden').addClass('fade-in');
+      }, 500);
+    });
+
+    // Trigger first slide manually on load
+    setTimeout(() => {
+      $('.slick-current .content').removeClass('hidden').addClass('fade-in');
+    }, 500);
+  });
+</script>
+
+<script>
+  // Generate Random Bars
+  function generateRandomBars() {
+    const container = document.getElementById('random-bars');
+    container.innerHTML = '';
+
+    const numBars = Math.floor(Math.random() * 7) + 3;
+    for (let i = 0; i < numBars; i++) {
+      const left = Math.floor(Math.random() * 10) + i;
+      const top = Math.floor(Math.random() * 10) + 1;
+      const height = Math.floor(Math.random() * 30) + 3;
+
+      const colors = ['bg-red-600', 'bg-white'];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      const bar = document.createElement('div');
+      bar.className = `absolute rounded-full ${color}`;
+      bar.style.left = `${left}vw`;
+      bar.style.top = `${top}vh`;
+      bar.style.height = `${height}vh`;
+      bar.style.width = `5px`;
+
+      container.appendChild(bar);
+    }
+  }
+
+  $(document).ready(function () {
+    generateRandomBars();
+  });
+
+  setInterval(generateRandomBars, 4000);
 </script>

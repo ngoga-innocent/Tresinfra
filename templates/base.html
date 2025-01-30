@@ -1,20 +1,74 @@
 {% load static %}
-<!DOCTYPE>
+<!DOCTYPE >
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tresinfra</title>
-    <link rel="stylesheet" href="{%static 'tailwind.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
-    <link rel="stylesheet" href="{%static 'css/all.min.css' %}">
-    <script src="{% static 'jquery.js' %}"></script>
-</head>
-<body class="flex flex-col relative">
-    <section class="sticky top-0 z-50 bg-white sticky-container ">{% include './Sections/Navbar.html' %}</section>
-    {% block Content %}{% endblock Content %}
-</body>
-<script src="{% static 'js/all.min.js' %}"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'slick/slick.css' %}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'slick/slick-theme.css' %}"
+  />
+  <script src="{% static 'jquery.js' %}"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick-theme.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+    integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script
+    type="text/javascript"
+    src="{% static 'slick/slick.min.js' %}"
+  ></script>
+  {% comment %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  {% endcomment %}
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tresinfra</title>
+    <link rel="stylesheet" href="{%static 'tailwind.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}" />
+    <link rel="stylesheet" href="{%static 'css/all.min.css' %}" />
+  </head>
+  <body class="flex flex-col relative">
+    <section class="top-0 z-50 sticky-container bg-transparent absolute">
+      {% include './Sections/Navbar.html' %}
+    </section>
+    {% block Content %}{% endblock Content %}
+    <a href="https://api.whatsapp.com/send?phone=0788310255" class="fixed bottom-4 right-4 rounded-full motion-safe:animate-bounce w-[7vw] text-white h-[7vw] flex flex-col items-center justify-center bg-my_orange rounded-full ">
+      <img src="{% static 'img/whatsapp_icon.png' %}" alt="">
+    </a>
+  </body>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="{% static 'js/all.min.js' %}"></script>
 </html>

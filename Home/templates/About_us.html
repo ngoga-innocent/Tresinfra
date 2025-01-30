@@ -18,11 +18,20 @@
     <!-- Slanted Shape -->
     
   </section>
-  <section>
-    {% include './Sections/AboutSections/Values.html' %}
+  <section id="vision">
+    {% include './Sections/AboutSections/OurBeginnings.html' %}
 </section>
-<section>
+<section id="mission">
+  {% include './Sections/AboutSections/Mission.html' %}
+</section>
+  {% comment %} <section>
+    {% include './Sections/AboutSections/Values.html' %}
+</section> {% endcomment %}
+<section id="policy">
     {% include './Sections/AboutSections/Policy.html' %}
+ </section>
+<section id="team">
+    {% include './Sections/AboutSections/Team.html' %}
  </section>
 <section>
     {% include './Sections/footer.html' %}

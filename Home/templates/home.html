@@ -1,13 +1,16 @@
 {% extends 'base.html' %} 
 {% load static %}
 {% block Content %}
-<div class="relative min-h-screen font-sans">
+<div class="relative min-h-screen   font-sans">
    
-<section id="hero_section">{% include './Sections/HeroSection.html' %}</section>
-<section id="learn_more" class="learn_more">
+<section class="max-w-screen overflow-x-hidden" id="hero_section">{% include './Sections/HeroSection.html' %}</section>
+<section id="learn_more" class="learn_more max-w-screen overflow-x-hidden ">
    {% include './Sections/LearnMore.html' %}
 </section>
-<section>
+<section id="team" class="py-20">
+   {% include './Sections/Team.html' %}
+</section>
+{% comment %} <section>
    {% include './Sections/Ourservices.html' %}
 </section>
 <section class="relative min-h-screen">
@@ -20,8 +23,8 @@
 </section>
 <section>
    {% include './Sections/Blog.html' %}
-</section>
-<section>
+</section> {% endcomment %}
+<section class="mt-20">
    {% include './Sections/footer.html' %}
 </section>
 </div>

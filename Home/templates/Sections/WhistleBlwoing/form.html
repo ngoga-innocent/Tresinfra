@@ -1,0 +1,214 @@
+{% load static %}
+<section class="flex flex-col items-center py-12 bg-heading/30 rounded-b-lg mb-4">
+  {% if messages %} {% for message in messages %}
+  <div
+    class="{% if message.tags == 'success' %} bg-heading/60 w-fit px-3 py-4 rounded-lg {% else %} text-my_orange/20 {% endif %}"
+  >
+    <p>{{ message }}</p>
+  </div>
+  {% endfor %} {% endif %}
+  <form
+    method="POST"
+    enctype="multipart/form-data"
+    action="{% url 'whistle_blowing' %}"
+    class="bg-white shadow-lg p-8 rounded-lg md:max-w-[60vw] relative w-[90vw] md:w-[60vw] mx-auto whistle_blowing_form"
+  >
+    {% csrf_token %}
+
+    <!-- Anonymous Selection -->
+    <img
+      src="{% static 'img/mic.png' %}"
+      class="absolute right-[2vw] top-[4vh] w-20 h-14 md:w-32 md:h-20"
+      alt=""
+    />
+    <div class="mb-4 z-10" style="z-index: 1000">
+      <label class="block text-gray-700 font-bold mb-2"
+        >Do you want to stay anonymous? *</label
+      >
+      <div class="flex items-center gap-4">
+        <label class="flex items-center">
+          <input
+            type="radio"
+            name="anonymous"
+            value="yes"
+            class="mr-2"
+            required
+          />
+          <span>Yes</span>
+        </label>
+        <label class="flex items-center">
+          <input type="radio" name="anonymous" value="no" class="mr-2" />
+          <span>No</span>
+        </label>
+      </div>
+      <div class="not_anonymous flex flex-col">
+        <div class="flex flex-col">
+          <label for="name" class="text-gray-700 font-bold"
+            >Name <span class="text-my_orange">*</span></label
+          >
+          <input
+            type="text"
+            name="names"
+            placeholder="Type your Name..."
+            required
+            class="flex flex-col rounded outline-none border-my_orange w-1/2 p-2 border"
+            id=""
+          />
+        </div>
+        <div class="flex flex-row gap-x-2">
+          <div class="flex flex-col flex-1">
+            <label for="name" class="text-gray-700 font-bold"
+              >Email <span class="text-my_orange">*</span></label
+            >
+            <input
+              type="email"
+              name="names"
+              placeholder="Type your Email..."
+              required
+              class="flex flex-col rounded outline-none border-my_orange w-[100%] p-2 border"
+              id=""
+            />
+          </div>
+          <div class="flex flex-col flex-1">
+            <label for="name" class="text-gray-700 font-bold"
+              >Phone Number
+            </label>
+            <input
+              type="text"
+              name="names"
+              placeholder="Type your phone number..."
+              required
+              class="flex flex-col rounded outline-none border-my_orange w-[100%] p-2 border"
+              id=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-bold mb-2"
+        >Misconduct Location *</label
+      >
+      <div class="flex gap-4">
+        <select
+          name="country"
+          class="w-1/2 p-2 border border-my_orange rounded"
+          required
+        >
+          <option value="">Please choose a country</option>
+          <option value="rwanda">Rwanda</option>
+          {% comment %}
+          <option value="kenya">Kenya</option>
+          {% endcomment %}
+        </select>
+        <select
+          name="city"
+          class="w-1/2 p-2 border border-my_orange rounded"
+          required
+        >
+          <option value="">Please choose a city</option>
+          <option value="kigali">Kigali</option>
+          <option value="nairobi">East</option>
+          <option value="kigali">West</option>
+          <option value="nairobi">South</option>
+          <option value="nairobi">North</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Case Details -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-bold mb-2"
+        >Please write down all details of the reported case *</label
+      >
+      <textarea
+        name="case_details"
+        class="w-full p-2 border border-my_orange rounded"
+        placeholder="Type your case report details..."
+        rows="5"
+        required
+      ></textarea>
+    </div>
+
+    <!-- File Upload -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-bold mb-2"
+        >Attach any evidence of the misconduct</label
+      >
+      <input
+        type="file"
+        name="evidence"
+        class="w-full p-2 border border-my_orange rounded"
+      />
+    </div>
+
+    <!-- Captcha -->
+    <div class="mb-4">
+      <div class="flex flex-row items-center captcha_value gap-x-4">
+        <label class="block text-gray-700 font-bold mb-2">Captcha *</label>
+      </div>
+      <input
+        type="text"
+        name="captcha"
+        class="w-full p-2 border border-my_orange rounded"
+        required
+        id="captcha"
+      />
+      <p id="captcha_error" class="text-my_orange ">Captcha incorrect</p>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="w-full bg-orange-500 text-white py-2 rounded-lg"
+    >
+      Submit
+    </button>
+  </form>
+</section>
+<script>
+  $(document).ready(function () {
+    //var anonymous=$("input[name='anonymous']:checked").val();
+    //if(anonymous === 'yes'){
+    //   $('.not_anonymous').hide();
+    //} else {
+    //  $('.not_anonymous').show();
+    //}
+    $(".not_anonymous").addClass(
+      "max-h-0 opacity-0 overflow-hidden scale-y-0 "
+    ); // Hide initially
+
+    $('input[name="anonymous"]').change(function () {
+      if ($(this).val() === "yes") {
+        $(".not_anonymous")
+          .addClass("scale-y-0 opacity-0 max-h-0 overflow-hidden") // Hide with animation
+          .removeClass("scale-y-100 opacity-100");
+      } else {
+        $(".not_anonymous")
+          .removeClass(" scale-y-0 max-h-0 opacity-0") // Show with animation
+          .addClass(
+            "transition-all max-h-fit duration-500 scale-y-100 opacity-100 ease-in"
+          );
+      }
+    });
+
+    // Captcha
+    var chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var captcha = "";
+    for (var i = 0; i < 6; i++) {
+      captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    $(".captcha_value").append(`<p class="text-heading/40">${captcha}</p>`);
+    //$("#captcha").val(captcha);
+    $("#captcha").keyup(function () {
+      if ($(this).val() === captcha) {
+        $("#captcha_error").hide();
+      } else {
+        $("#captcha_error").show();
+      }
+    });
+  });
+</script>
