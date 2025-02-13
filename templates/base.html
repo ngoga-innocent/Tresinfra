@@ -61,7 +61,7 @@
       {% include './Sections/Navbar.html' %}
     </section>
     {% block Content %}{% endblock Content %}
-    <a href="https://api.whatsapp.com/send?phone=0788310255" class="fixed bottom-4 right-4 rounded-full motion-safe:animate-bounce w-[7vw] text-white h-[7vw] flex flex-col items-center justify-center bg-my_orange rounded-full ">
+    <a href="https://api.whatsapp.com/send?phone=0788310255" class="fixed bottom-4 right-4 rounded-full motion-safe:animate-bounce w-[5vw] text-white h-[5vw] flex flex-col items-center justify-center  rounded-full ">
       <img src="{% static 'img/whatsapp_icon.png' %}" alt="">
     </a>
   </body>
@@ -71,4 +71,5 @@
     AOS.init();
   </script>
   <script src="{% static 'js/all.min.js' %}"></script>
+ 
 </html>

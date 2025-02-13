@@ -727,6 +727,10 @@ video {
   left: 0px;
 }
 
+.left-5 {
+  left: 1.25rem;
+}
+
 .left-\[10vw\] {
   left: 10vw;
 }
@@ -765,10 +769,6 @@ video {
 
 .top-16 {
   top: 4rem;
-}
-
-.top-4 {
-  top: 1rem;
 }
 
 .top-\[12vh\] {
@@ -998,6 +998,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -1173,10 +1177,6 @@ video {
   height: 0.5rem;
 }
 
-.h-20 {
-  height: 5rem;
-}
-
 .h-3 {
   height: 0.75rem;
 }
@@ -1241,6 +1241,10 @@ video {
   height: 3px;
 }
 
+.h-\[40vh\] {
+  height: 40vh;
+}
+
 .h-\[4px\] {
   height: 4px;
 }
@@ -1251,6 +1255,10 @@ video {
 
 .h-\[5px\] {
   height: 5px;
+}
+
+.h-\[5vw\] {
+  height: 5vw;
 }
 
 .h-\[60vh\] {
@@ -2898,6 +2906,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-zinc-100 {
+  --tw-gradient-from: #f4f4f5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(244 244 245 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-blue-50 {
   --tw-gradient-to: rgb(239 246 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #eff6ff var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2918,6 +2932,10 @@ video {
 
 .to-white {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
+}
+
+.to-zinc-200 {
+  --tw-gradient-to: #e4e4e7 var(--tw-gradient-to-position);
 }
 
 .decoration-slice {
@@ -3940,11 +3958,20 @@ video {
   forced-color-adjust: none;
 }
 
-html,body{
+/* html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  
+} */
+
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  /* min-height: 200vh; */
 }
 
 #menu {
@@ -4782,10 +4809,6 @@ html,body{
     position: static;
   }
 
-  .md\:absolute {
-    position: absolute;
-  }
-
   .md\:left-\[29vw\] {
     left: 29vw;
   }
@@ -4849,8 +4872,8 @@ html,body{
     height: 23vw;
   }
 
-  .md\:h-\[30vh\] {
-    height: 30vh;
+  .md\:h-\[40vh\] {
+    height: 40vh;
   }
 
   .md\:h-\[90vh\] {
@@ -5010,6 +5033,11 @@ html,body{
 
   .md\:border-0 {
     border-width: 0px;
+  }
+
+  .md\:bg-heading {
+    --tw-bg-opacity: 1;
+    background-color: rgb(37 55 70 / var(--tw-bg-opacity, 1));
   }
 
   .md\:bg-transparent {

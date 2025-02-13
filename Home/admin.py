@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Carousel,OurService,Achievement,Blog,Team,MisconductReport
 # Register your models here.
-admin.site.register(Carousel)
+# admin.site.register(Carousel)
 admin.site.register(OurService)
 admin.site.register(Achievement)
 admin.site.register(Team)
@@ -12,3 +12,6 @@ class BlogAdmin(admin.ModelAdmin):
 @admin.register(MisconductReport)
 class MisconductReportAdmin(admin.ModelAdmin):
     list_display = ('anonymous', 'names', 'email', 'phone_number', 'country', 'city', 'submitted_at')
+@admin.register(Carousel)
+class CarouselAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'subtitle', 'created_at')

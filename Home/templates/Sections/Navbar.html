@@ -1,9 +1,10 @@
 {% load static %}
-<div class="top-0 z-50 relative flex flex-row md:gap-x-12  justify-between md:justify-center bg-white md:bg-transparent w-screen items-center md:px-10 px-3">
+<div id="navbar" class="fixed top-0 left-0 w-full z-50 flex flex-row md:gap-x-12 justify-between md:justify-center bg-white md:bg-transparent items-center md:px-10 px-3 transition-all duration-300">
+
     <!-- Logo Section -->
-    <div class="md:absolute top-0 left-0">
-        <a href="{% url 'homepage' %}">
-            <img src="{% static 'img/logo.png' %}" alt="Tresinfra" class="h-20 w-20">
+    <div class=" top-0 left-5">
+        <a href="{% url 'homepage' %}" class="h-[10vw] w-[10vw] overflow-hidden">
+            <img src="{% static 'img/logo.png' %}" alt="Tresinfra" class="h-[10vw] w-[10vw]">
         </a>
     </div>
 
@@ -47,6 +48,9 @@
                     <li>
                         <a class="link" href="{% url 'about_us' %}#team">Board of Directors</a>
                     </li>
+                    <li>
+                        <a class="link" href="https://www.admaius.com/team/">Our Investors</a>
+                    </li>
                 </ul>
                 
                 
@@ -62,35 +66,34 @@
                     <li>
                         <a class="hover:text-orange-600 transition-all ease-in-out" href="{% url 'solutions' %}#built_to_suit">Built-to-suit</a>
                     </li>
-                    <li>
+                    {% comment %} <li>
                         <a class="link" href="{% url 'solutions' %}#lite_built_to_suit">Lite Built-to-suit</a>
-                    </li>
+                    </li> {% endcomment %}
                     <li>
                         <a class="link" href="{% url 'solutions' %}#colocation">Colocation</a>
                     </li>
-                    <li>
+                    {% comment %} <li>
                         <a class="link" href="{% url 'solutions' %}#lite-colocation">Lite Collocation</a>
-                    </li>
+                    </li> {% endcomment %}
                     <li>
                         <a class="link" href="{% url 'solutions' %}#ibs">In Building Solutions</a>
                     </li>
-                    <li>
+                    {% comment %} <li>
                         <a class="link" href="{% url 'solutions' %}#fiber-facility">Fiber facility</a>
-                    </li>
-                    <li>
+                    </li> {% endcomment %}
+                    {% comment %} <li>
                         <a class="link" href="{% url 'solutions' %}#caas">Coverage as a Service(caas)</a>
-                    </li>
-                    <li>
+                    </li> {% endcomment %}
+                    {% comment %} <li>
                         <a class="link" href="{% url 'solutions' %}#flex-tower">Flex Tower</a>
-                    </li>
+                    </li> {% endcomment %}
                 </ul>
                 
                 
             </li>
             <li class="flex flex-col items-center">
                 <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
-                <a href="{% url 'whistle_blowing' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'whistle_blowing' %} text-red-700 {% endif %}">Whistle Blowing</a>
-            </li>
+                <a href="{% url 'esg' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'esg' %} text-red-700 {% endif %}">Impact & Esg</a></li>
             <li class="flex flex-col items-center">
                 <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
                 <a href="{% url 'join_team' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'join_team' %} text-red-700 {% endif %}">Join Our Team</a>
@@ -98,9 +101,11 @@
             <li class="flex flex-col items-center">
                 <div class=" absolute top-0 h-7 w-[2px] bg-white"></div>
                 <a href="{% url 'contact' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'contact' %} text-red-700 {% endif %}">Contact</a></li>
-            <li class="flex flex-col items-center">
-                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
-                <a href="{% url 'esg' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'esg' %} text-red-700 {% endif %}">Impact & Esg</a></li>
+            
+                <li class="flex flex-col items-center">
+                    <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                    <a href="{% url 'whistle_blowing' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'whistle_blowing' %} text-red-700 {% endif %}">Whistle Blowing</a>
+                </li>    
             <li class="flex flex-col items-center">
                 <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
                 <a href="{% url 'blog_list' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'blog_list' %} text-red-700 {% endif %}">Blogs</a></li>
@@ -155,6 +160,24 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                if ($(window).width() > 768) {
+                    // Mobile (screen width < 768px)
+                    $("#navbar").removeClass("md:bg-transparent").addClass("md:bg-heading shadow-md");
+                } 
+            } else {
+                $("#navbar").removeClass("md:bg-heading shadow-md").addClass("md:bg-transparent");
+            }
+        });
+    });
+    
+    
+</script>
+
+
 {% comment %} <script>
     document.addEventListener("DOMContentLoaded", function () {
         const aboutToggle = document.getElementById("about-toggle");

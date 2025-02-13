@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+/* html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  
+} */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* min-height: 200vh; */
+}
+
+#menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+}
+
+/* Show menu (overrides hidden styles) */
+#menu.show {
+    transform: scaleY(1);
+    opacity: 1;
+}
+@media (min-width: 768px) {
+    #menu {
+        transform: none;
+        opacity: 1;
+        
+    }
+    
+}
+@media(max-width: 768px) {
+  .whistle-blowing{
+    background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+  }
+}
+
+/* .carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100vw; 
+    position: relative;
+    transition: transform 1s ease-in-out;
+    background:rgba(0,0,0,0.7);
+    object-fit: cover;
+    background-size: cover;
+} */
+
+/* .carousel-item {
+    flex: 0 0 100%;
+    text-align: center;
+    
+    transform: scale(1);
+    transition: transform 6s ease-in-out, opacity 6s ease-in-out;
+} */
+
+/* .carousel-item.focus {
+    transform: scale(1.2); 
+    opacity: 1; 
+} */
+.sticky-container {
+    /* position: sticky; */
+    top: 0;
+    z-index: 1000;
+    /* background-color: transparent; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    font-family: "Teko", serif;
+    text-transform: uppercase;
+    font-size: small;
+    color: whitesmoke;
+    font-weight: bold;
+   
+    
+
+ }
+ .footer {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url("./img/rooftop-site.34b925a30ef5.jpg");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    
+}
+.services{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/network_optimization_bg.c050a1d0e569.jpg");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+.fixed{
+    background-attachment: fixed;
+}
+.contact_Us{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/home_pic2.5980664f5789.JPG");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat
+}
+
+.blog{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/blog-bg.7517d77fbd3e.jpg");
+    background-size: cover; /* Ensure the background image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat
+}
+.solution1{
+    background-image: url("./img/bts_bg.f0c4b7cb15b8.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.solution2{
+    background-image: url("./img/colocation_bg.6f7fdaaa8540.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.solution3{
+    background-image: url("./img/build.96ee2abc8e50.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.solution:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}
+#svg-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #svg-animation svg {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    transform: translateY(0); /* Center alignment */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; /* Internet Explorer and Edge */
+  }
+  .active{
+    @apply bg-red-700
+  }
+  .solution{
+    @apply text-white text-center flex flex-col px-2  py-2 items-center justify-center
+  }
+  .solution h2{
+    z-index: 1000;
+    @apply text-white  text-center space-y-2 font-bold
+  }
+  .solution p{
+    z-index: 100;
+    @apply md:text-white text-center space-y-2 md:opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100
+  }
+  .link_button{
+    @apply text-white text-center bg-my_orange px-5 py-2 rounded-md hover:opacity-80 hover:cursor-pointer transition-all duration-300 ease-in-out
+  }
+  .footer_list  li a{
+    @apply text-white text-center font-bold text-sm font-bold hover:opacity-80 transition
+  }
+  @keyframes fadeup {
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        scale: 1;
+    }
+  }
+  .fadeup{
+    animation: fadeup linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+  }
+  .heading1{
+    @apply text-heading text-center text-4xl font-bold md:text-4xl space-y-2
+  }
+  .link {
+      @apply hover:text-my_orange transition-all ease-in-out;
+    }
+  .mission_div{
+    @apply flex flex-col items-center relative bg-white rounded-b-lg py-7 mx-3 px-4
+  }
+  .mission_icon{
+    @apply w-[8vw] h-[8vw] absolute -top-[6vh] rounded-full flex flex-col items-center justify-center bg-white shadow-sm shadow-black z-10 
+  }
+  .mission_icon img{
+    @apply w-[6vw] h-[6vw] rounded-full
+  }
+  .mission_div p{
+    margin-top: 8vh;
+    @apply text-center 
+  }
+  .service_div{
+    @apply flex flex-col items-center relative justify-center mx-3 px-4
+  }
+  .service_div img{
+    @apply w-[4vw] h-[4vw] 
+  }
+  .service_div p{
+    @apply text-neutral-200 text-center
+  }
+  .solution_hero{
+    background-image: url("./img/banner4.94262cdffdaa.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .solutions{
+    @apply relative  flex flex-row items-center justify-center gap-x-4 hover:cursor-pointer
+  }
+  .solution_header{
+    @apply absolute opacity-0 group-hover:opacity-100 rotate-90 -left-[7vh] bg-white z-50 rounded-full border border-my_orange text-my_orange py-1 px-3
+  }
+  .solution_line{
+    @apply h-[4px] flex-1 bg-zinc-900 group-hover:bg-my_orange rounded-full
+  }
+  .solution h1{
+    @apply group-hover:text-my_orange text-heading
+  }
+  .solution_description{
+    @apply  gap-y-4 w-[90%] mx-auto 
+  }
+  .solution_description .active{
+    @apply transition-all duration-500 ease-in-out
+  }
+  .solution_description h5{
+    @apply text-my_orange font-bold text-lg
+  }
+  .solution_description ol{
+    @apply list-decimal ml-4
+  }
+  .team_hero{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/teamwork.acc4c82b0af4.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .clip_path {
+    clip-path: inset(7vw  round 10px);
+}
+.value{
+  z-index: 10;
+  @apply flex flex-col items-center justify-center 
+}
+.value p{
+  @apply opacity-100 group-hover:opacity-100 transition-all duration-500 text-sm text-heading text-center 
+}
+.value .value_img{
+  @apply w-[8vw] h-[8vw] rounded-full bg-white flex flex-col items-center justify-center border  border-my_orange
+}
+.value .value_img img{
+  @apply w-[5vw] h-[5vw] rounded-full bg-white 
+}
+.sms-clipped{
+  
+  @apply bg-white pb-4 pt-4 rounded-lg px-2  left-0 top-0 md:opacity-0 group-hover:opacity-100 transition-all duration-500
+  
+}
+.whistle-blowing{
+  background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center right;
+}
+
