@@ -6,6 +6,7 @@ Django==5.1.4
 django-ckeditor==6.7.2
 django-ckeditor-5==0.2.15
 django-cloudinary-storage==0.3.0
+django-jazzmin==3.0.1
 django-js-asset==3.0.1
 gunicorn==23.0.0
 idna==3.10
