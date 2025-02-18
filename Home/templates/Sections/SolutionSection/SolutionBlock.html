@@ -1,6 +1,6 @@
 {% load static %}
 <section style="z-index: 1;" class="flex flex-col bg-gray-100 py-20">
-    <div class="flex flex-col w-[20vw] flex-1 -rotate-90 mx-[20vw] gap-y-3">
+    <div class="flex flex-col w-[20vw] py-5  mx-[20vw] gap-y-3">
         <div id="built_to_suit" class="built_to_suit solutions group">
             <h1>Built-to-Suit</h1>
             <div class="solution_line"></div>
@@ -29,11 +29,11 @@
         
     </div>
     {% comment %} Solution Description {% endcomment %}
-    <div class="flex flex-col relative h-auto">
+    {% comment %} <div class="flex flex-col relative h-auto">
         <div class="flex flex-row relative items-start justify-center w-[50vw] mx-auto gap-x-3 my-32">
             <img class="absolute -left-20 w-12 h-12" src="{% static 'img/BTS_solution.png' %}" alt="">
             <div class="rounded-xl border border-heading overflow-hidden  pt-2">
-                {% comment %} Solution 1 {% endcomment %}
+                
                 <div class="built_to_suit solution_description hidden flex-col">
                     <h5>What is Built-to-suit?</h5>
                     <p>Tres handles the entire process of constructing state-of-the-art telecom towers, from Site Analysis & Site Acquisition, permit applications for construction of Site, Project Management and Equipment Installation’s Tower & Power before final delivery to our clients. We tailor our services to the passive infrastructure needs, including site, tower and power supply. Once the site is complete, we evaluate its potential for co-location and seek ways to attract additional tenants to lease space. In challenging areas for site acquisition, we offer the option of constructing sites that require less land, such as rooftop installations.
@@ -160,7 +160,93 @@
                 <div class="h-[2px] w-[14vw] bg-zinc-200"></div>
             </button>
         </div>
+    </div> {% endcomment %}
+    <div class="overflow-x-auto w-[90vw] mx-auto my-7">
+        <table class="min-w-full border border-gray-300 my-7">
+            <thead>
+                <tr class="bg-gray-200 text-gray-700">
+                    <th class="border border-gray-300 px-4 py-2 text-left solution_heading text-my_orange">Solution</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left solution_heading text-my_orange">Description</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left solution_heading text-my_orange">Benefits</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-600">
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2 font-semibold">Built-to-Suit</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        Tres handles the entire process of constructing telecom towers, including site acquisition, permits, project management, and equipment installation.
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <ul class="list-disc pl-5">
+                            <li>Lower expenses and enhance cash flow efficiency</li>
+                            <li>Simplifies site selection, contract management, and vendor partnerships</li>
+                            <li>Eliminates complexities of site operation and maintenance</li>
+                            <li>Reduces risks associated with tower ownership and management</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2 font-semibold">Colocation</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        Tower companies lease tower structures and associated passive equipment to mobile network operators (MNOs).
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <ul class="list-disc pl-5">
+                            <li>Generates additional revenue without constructing new towers</li>
+                            <li>Wireless tenants save costs and time by co-locating</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2 font-semibold">In-Building Solution (IBS)</td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        In-building wireless solutions enhance mobile connectivity within buildings using distributed antenna systems (DAS), small cells, or repeaters.
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <ul class="list-disc pl-5">
+                            <li><span class="font-bold">Enhanced User Experience:</span> Seamless connectivity, faster data speeds, and improved call quality</li>
+                            <li><span class="font-bold">Operational Benefits:</span> Higher tenant satisfaction, increased property value</li>
+                            <li><span class="font-bold">Business Benefits:</span> Boosted productivity, improved customer experience</li>
+                            <li><span class="font-bold">Future-Proofing:</span> 5G readiness and scalability</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    
+    <div class="w-[90vw] mx-auto flex flex-col items-center justify-center ">
+        <h5 class="text-xl font-bold mt-6 text-my_orange">Types of In-Building Wireless Solutions</h5>
+        <div class="overflow-x-auto mt-2">
+            <table class="min-w-full border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200 text-gray-700">
+                        <th class="border border-gray-300 px-4 py-2 text-left">Solution Type</th>
+                        <th class="border border-gray-300 px-4 py-2 text-left">Best For</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600">
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2 font-semibold">Distributed Antenna Systems (DAS)</td>
+                        <td class="border border-gray-300 px-4 py-2">Large venues like stadiums, airports, and office towers</td>
+                    </tr>
+                    <tr class="bg-gray-100">
+                        <td class="border border-gray-300 px-4 py-2 font-semibold">Small Cells</td>
+                        <td class="border border-gray-300 px-4 py-2">Medium-sized buildings or areas with moderate user density</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2 font-semibold">Repeaters</td>
+                        <td class="border border-gray-300 px-4 py-2">Smaller buildings or budget-conscious projects</td>
+                    </tr>
+                    <tr class="bg-gray-100">
+                        <td class="border border-gray-300 px-4 py-2 font-semibold">Neutral Host Solutions</td>
+                        <td class="border border-gray-300 px-4 py-2">Public venues or multi-tenant buildings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
 </section>
 <script>
     $(document).ready(function(){

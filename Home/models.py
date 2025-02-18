@@ -56,6 +56,16 @@ class Team(models.Model):
     position = models.CharField(max_length=200)
     other_position=models.CharField(max_length=200,null=True,blank=True)
     board_member=models.BooleanField(default=False)
+    linkedin=models.URLField(null=True,blank=True)
+    order = models.IntegerField(default=0)
+    
+    class Meta:
+        ordering = ['order']
+    def save(self, *args, **kwargs):
+        if not self.order:  # Only assign if `order` is not set
+            last_order = Team.objects.aggregate(max_order=models.Max('order'))['max_order']
+            self.order = (last_order + 1) if last_order is not None else 1
+        super().save(*args, **kwargs)
     def __str__(self):
         return self.name
 class MisconductReport(models.Model):
