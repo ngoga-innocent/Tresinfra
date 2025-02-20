@@ -45,7 +45,10 @@ html, body {
     background-position: bottom;
   }
 }
-
+.hero_section{
+  background-image: url('./img/impact.jpg');
+  background-size: cover;
+}
 /* .carousel-container {
     display: flex;
     overflow: hidden;
@@ -75,7 +78,8 @@ html, body {
     z-index: 1000;
     /* background-color: transparent; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    font-family: "Teko", serif;
+    /* font-family: "Teko", serif; */
+    font-family: Arial, sans-serif;
     text-transform: uppercase;
     font-size: small;
     color: whitesmoke;

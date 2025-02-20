@@ -47,9 +47,35 @@
     </div>
     <div class="w-[80vw] mx-auto flex gap-x-3">
         <div class="h-[100%] w-[4px] bg-my_orange rounded-full"></div>
-        <div class="flex flex-col w-[40vw] gap-y-3 mb-10">
-            <h1 class="text-white text-4xl font-bold">BUILT TO SUIT</h1>
-            <h2 class="text-white text-lg">TRES SELECTS AN OPTIMUM SPOT AND CONSTRUCTS WIRELESS COMMUNICATION TOWERS, TAILOR-MADE TO MATCH YOUR BUSINESS’ NEEDS.</h2>
+        <div class="flex flex-row w-[50vw] slick-carousel">
+            <div class="slide flex flex-col min-w-[50vw] w-[40vw] gap-y-3 mb-10">
+                <h1 class="text-white text-4xl font-bold">BUILT TO SUIT</h1>
+                <h2 class="text-white text-lg Capitalize">TRES SELECTS AN OPTIMUM SPOT AND CONSTRUCTS WIRELESS COMMUNICATION TOWERS, TAILOR-MADE TO MATCH YOUR BUSINESS’ NEEDS.</h2>
+            </div>
+            <div class="slide flex flex-col w-[40vw] gap-y-3 mb-10">
+                <h1 class="text-white text-4xl font-bold">Co-Location</h1>
+                <h2 class="text-white text-lg capitalize">Tower companies lease tower structures and associated passive equipment to mobile network operators (MNOs).</h2>
+            </div>
+            <div class="slide flex flex-col w-[40vw] gap-y-3 mb-10">
+                <h1 class="text-white text-4xl font-bold">
+                    In-building Solution(IBS)</h1>
+                <h2 class="text-white text-lg capitalize">In-building wireless solutions enhance mobile connectivity within buildings using distributed antenna systems (DAS), small cells, or repeaters.</h2>
+            </div>
         </div>
     </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    
+    $(document).ready(function(){
+        $('.slick-carousel').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            arrows: true,
+            dots: true
+        });
+    });
+</script>

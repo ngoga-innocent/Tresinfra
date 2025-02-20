@@ -99,13 +99,14 @@
                 <a href="{% url 'join_team' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'join_team' %} text-red-700 {% endif %}">Join Our Team</a>
             </li>
             <li class="flex flex-col items-center">
+                <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
+                <a href="{% url 'whistle_blowing' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'whistle_blowing' %} text-red-700 {% endif %}">Whistle Blowing</a>
+            </li>  
+            <li class="flex flex-col items-center">
                 <div class=" absolute top-0 h-7 w-[2px] bg-white"></div>
                 <a href="{% url 'contact' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'contact' %} text-red-700 {% endif %}">Contact</a></li>
             
-                <li class="flex flex-col items-center">
-                    <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
-                    <a href="{% url 'whistle_blowing' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'whistle_blowing' %} text-red-700 {% endif %}">Whistle Blowing</a>
-                </li>    
+                  
             <li class="flex flex-col items-center">
                 <div class="absolute top-0 h-7 w-[2px] bg-white"></div>
                 <a href="{% url 'blog_list' %}" class="px-2 py-2 hover:text-red-700 {% if request.resolver_match.url_name == 'blog_list' %} text-red-700 {% endif %}">Blogs</a></li>

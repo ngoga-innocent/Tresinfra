@@ -2,10 +2,12 @@
 <section class="w-full flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100">
     <div class="container mx-auto flex flex-col py-7 items-center justify-center">
         <div class="flex flex-row items-center gap-x-4">
-            <button class="text-my_orange font-bold text-lg py-2 px-4 active_teamsection leaders rounded-full transition-all ease-in-out ">LEADERSHIP TEAM</button>
-            <button class="text-my_orange font-bold text-xl py-2 px-4 rounded-full transition-all ease-in-out board">BOARD OF DIRECTORS</button>
+            <button class="text-my_orange font-bold text-lg py-2 px-4 active_teamsection management rounded-full transition-all management ease-in-out ">MANAGEMENT TEAM</button>
+            <button class="text-my_orange font-bold text-xl py-2 px-4 rounded-full transition-all ease-in-out team">TEAM</button>
+            <button class="text-my_orange font-bold text-xl py-2 px-4 rounded-full transition-all ease-in-out board">BORDER OF DIRECTORS</button>
         </div>
-        <div class="leader_member grid grid-cols-1  md:grid-cols-4 w-[90%] items-center justify-center gap-3 my-12">
+        {% comment %} Team {% endcomment %}
+        <div class="hidden team_members grid grid-cols-1  md:grid-cols-4 w-[90%] items-center justify-center gap-3 my-12">
             {% if team_members %}
                 {% for member in team_members %}
                     <div class="flex flex-col pb-4 bg-white items-center gap-y-3 md:rounded-lg h-[50vh] rounded-md">
@@ -27,8 +29,32 @@
                 {% endfor %}
             {% endif %}
         </div>
-        <div class="hidden board_members grid grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
+        {% comment %} Management Team {% endcomment %}
+        <div class=" management_members grid grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
             {% if team_members %}
+                {% for member in management_members %}
+                <div class="flex flex-col pb-4 bg-white items-center gap-y-3 md:rounded-lg h-[50vh] rounded-md">
+                    <a href="{{member.image.url}}" target="_blank" class="overflow-hidden hover:cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110">
+                        <img src="{{ member.image.url }}" 
+                             class="ring-white ring-4 " 
+                             alt="">
+                    </a>
+                    
+                   <div class="flex flex-col  w-[90%] mx-auto items-start">
+                        <div class="flex flex-col items-start  py-5">
+                            <h1 class="uppercase font-bold text-my_orange">{{member.name}}</h1>
+                            <h1 class="text-zinc-500 capitalize text-sm">{{member.position}}</h1>
+                        </div>
+                        <div class="h-[1px] bg-gray-200 w-[100%] my-2"></div>
+                        <a target="_blank" href="{% if member.linkedin %}{{member.linkedin}} {% else %} https://www.linkedin.com/company/trust-engineering-solutions-ltd.-tres-ltd-/ {% endif %}"><img src="{% static 'img/linkedin1.png' %}" class="h-4 w-4 my-4" alt=""></a>
+                   </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% comment %} Board Of Directors {% endcomment %}
+        <div class="hidden board_members grid grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
+            {% if board_members %}
                 {% for member in board_members %}
                 <div class="flex flex-col pb-4 bg-white items-center gap-y-3 md:rounded-lg h-[50vh] rounded-md">
                     <a href="{{member.image.url}}" target="_blank" class="overflow-hidden hover:cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110">
@@ -59,17 +85,29 @@
 </style>
 <script>
     $(document).ready(function() {
-        $('.leaders').click(function() {
-            $('.leaders').addClass('active_teamsection');
+        $('.management').click(function() {
+            $('.management').addClass('active_teamsection');
             $('.board').removeClass('active_teamsection');
-            $('.leader_member').removeClass('hidden');
+            $('.team').removeClass('active_teamsection');
+            $('.management_members').removeClass('hidden');
             $('.board_members').addClass('hidden');
+            $('.team_members').addClass('hidden');
         });
         $('.board').click(function() {
             $('.board').addClass('active_teamsection');
-            $('.leaders').removeClass('active_teamsection');
-            $('.leader_member').addClass('hidden');
+            $('.team').removeClass('active_teamsection');
+            $('.management').removeClass('active_teamsection');
+            $('.team_members').addClass('hidden');
+            $('.management_members').addClass('hidden');
             $('.board_members').removeClass('hidden');
+        });
+        $('.team').click(function() {
+            $('.team').addClass('active_teamsection');
+            $('.board').removeClass('active_teamsection');
+            $('.management').removeClass('active_teamsection');
+            $('.board_members').addClass('hidden');
+            $('.management_members').addClass('hidden');
+            $('.team_members').removeClass('hidden');
         });
     });
 </script>

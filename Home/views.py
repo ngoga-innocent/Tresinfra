@@ -14,7 +14,7 @@ from django.contrib import messages
 # Create your views here.
 class Home(View):
     def get(self,request):
-        carousel=Carousel.objects.all().order_by('-created_at')[:10]
+        carousel=Carousel.objects.all().order_by('order')[:10]
         service=OurService.objects.all().order_by('-created_at')[:10]
         achievements = Achievement.objects.all()
         blogs = Blog.objects.all().order_by('-date')[:5]
@@ -42,9 +42,10 @@ def filter_projects(request):
     ]
     return JsonResponse(project_list, safe=False)
 def About_us(request):
-    team_members =Team.objects.filter(board_member=False)
+    team_members =Team.objects.filter(board_member=False, management_team=False)
     board_members = Team.objects.filter(board_member=True)
-    return render(request, './About_us.html',{'team_members':team_members,'board_members':board_members})
+    management_members = Team.objects.filter(management_team=True)
+    return render(request, './About_us.html',{'team_members':team_members,'board_members':board_members,'management_members':management_members})
 def Services(request):
     service=OurService.objects.all().order_by('-created_at')
     return render(request, './services.html',{'services':service})

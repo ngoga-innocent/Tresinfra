@@ -1087,22 +1087,6 @@ video {
   margin-left: 3.5rem;
 }
 
-.-ml-32 {
-  margin-left: -8rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.ml-24 {
-  margin-left: 6rem;
-}
-
-.ml-20 {
-  margin-left: 5rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -4124,7 +4108,7 @@ html, body {
 
 @media(max-width: 768px) {
   .whistle-blowing{
-    background-image: url('./img/img-report-banner.jpg');
+    background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: bottom;
@@ -4132,7 +4116,7 @@ html, body {
 }
 
 .hero_section{
-  background-image: url('./img/impact.jpg');
+  background-image: url("./img/impact.8673ea8a2eba.jpg");
   background-size: cover;
 }
 
@@ -4176,7 +4160,7 @@ html, body {
 
 .footer {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                      url('./img/rooftop-site.jpg');
+                      url("./img/rooftop-site.34b925a30ef5.jpg");
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4186,7 +4170,7 @@ html, body {
 }
 
 .services{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/network_optimization_bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/network_optimization_bg.c050a1d0e569.jpg");
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4200,7 +4184,7 @@ html, body {
 }
 
 .contact_Us{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/home_pic2.JPG');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/home_pic2.5980664f5789.JPG");
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4209,7 +4193,7 @@ html, body {
 }
 
 .blog{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/blog-bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/blog-bg.7517d77fbd3e.jpg");
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4218,19 +4202,19 @@ html, body {
 }
 
 .solution1{
-  background-image: url('./img/bts_bg.jpg');
+  background-image: url("./img/bts_bg.f0c4b7cb15b8.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .solution2{
-  background-image: url('./img/colocation_bg.jpg');
+  background-image: url("./img/colocation_bg.6f7fdaaa8540.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .solution3{
-  background-image: url('./img/build.jpg');
+  background-image: url("./img/build.96ee2abc8e50.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -4502,7 +4486,7 @@ html, body {
 }
 
 .solution_hero{
-  background-image: url('./img/banner4.jpg');
+  background-image: url("./img/banner4.94262cdffdaa.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -4604,7 +4588,7 @@ html, body {
 }
 
 .team_hero{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/teamwork.png');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/teamwork.acc4c82b0af4.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -4687,7 +4671,7 @@ html, body {
 }
 
 .whistle-blowing{
-  background-image: url('./img/img-report-banner.jpg');
+  background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center right;

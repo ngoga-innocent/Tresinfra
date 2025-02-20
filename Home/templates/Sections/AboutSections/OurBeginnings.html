@@ -1,4 +1,5 @@
 
+{% load static %}
 <section class="bg-gradient-to-b from-white via-neutral-200 to-neutral-300">
     <div class="container relative mx-auto px-6 md:px-12 lg:px-24 pt-12 flex flex-col justify-center items-center">
         <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">Our Beginnings</h2>
@@ -53,10 +54,71 @@
                 </p>
             </div>
         </div>
-        <div class="items-center justify-center flex flex-col gap-y-2 my-12">
+        {% comment %} <div class="items-center justify-center flex flex-col gap-y-2 my-12">
             <h1 class="heading1">Vision</h1>
             <p class="text-center w-[50vw] text-wrap uppercase text-heading text-lg font-bold">To ensure no Bit of Information is lost due to a BTS site not taken care of, as a BTS Site is a key node for customer experience in a wireless network.</p>
+        </div> {% endcomment %}
+        {% comment %} Vision Center {% endcomment %}
+        <div class="flex flex-row py-20">
+            <!-- Circle with Map -->
+            <div class="flex-shrink-0" style="
+                width: 400px; 
+                height: 400px; 
+                min-width: 400px; 
+                min-height: 400px; 
+                border-radius: 50%; 
+                border: 4px solid #243746; 
+                overflow: hidden; 
+                display: flex; 
+                align-items: center; 
+                z-index: 100;
+                justify-content: center;">
+                
+                <img src="{% static 'img/5g-1.jpg' %}" alt="Map Image" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        
+            <!-- Vision Section -->
+            <div class="flex flex-col flex-1"> <!-- Added margin-left to separate sections -->
+                <div  class="w-full items-start text-start flex flex-col max-w-2xl mt-6  pt-4">
+                    <h2 class="text-lg font-bold text-heading">Vision</h2>
+                    <div class="-ml-32" style="height: 2px;width: 125%;background-color:#F74E00;margin-top:10px;"></div>
+                    <p class="text-gray-700 text-start">
+                        <strong>Our vision</strong> is to be the leader in providing best-in-class telecom infrastructure 
+                        services in the eyes of our customers and employees.
+                    </p>
+                </div>
+                
+        
+                <!-- Mission Section -->
+                <div class="w-full max-w-2xl mt-6   pt-4">
+                    <h2 class="text-lg font-bold text-heading ml-5">Mission</h2>
+                    <div class="" style="height: 2px;width: 110%;background-color:#F74E00;margin-top:10px;margin-left: -16px;"></div>
+                    <p class="text-gray-700 text-start ml-10">
+                        <strong>Our mission</strong> is to engage and empower our team to deliver the highest level 
+                        of service by providing unrivaled performance to our customers at all times, supporting 
+                        them in growing efficient, universal wireless networks; thereby bringing maximum 
+                        benefit to all stakeholders.
+                    </p>
+                </div>
+                
+                <!-- Values Section -->
+                <div class="w-full max-w-2xl   pt-4">
+                    <h2 class="text-lg font-bold text-heading ml-20">Values</h2>
+                    <div class="-ml-20" style="height: 2px;width: 120%;background-color:#F74E00;margin-top:10px;"></div>
+                    <ul class="text-gray-700 list-disc list-inside ml-20">
+                        <li><strong>Integrity</strong></li>
+                        <li><strong>Customer Focus</strong></li>
+                        <li><strong>Valuing Employees and Teams</strong></li>
+                        <li><strong>Accountability</strong></li>
+                        <li><strong>Mutual Respect</strong></li>
+                        <li><strong>Working Smart</strong></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        
+        
         <div style="margin-bottom: -29vh;" class="svg  bottom-0">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="591.973px" height="540.16px"

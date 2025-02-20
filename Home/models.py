@@ -10,9 +10,12 @@ class Carousel(models.Model):
     image=models.ImageField(upload_to='Homecarousel/')
     title=models.TextField(blank=True,null=True)
     subtitle=models.TextField(blank=True,null=True)
+    order=models.PositiveIntegerField(default=0)
     created_at=models.DateTimeField(default=timezone.now)
     def __str__(self):
         return str(self.id)
+    class Meta:
+        ordering = ['order','created_at']
 class OurService(models.Model):
     id=models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False,unique=True)
     image=models.ImageField(upload_to='Service/')
@@ -56,6 +59,7 @@ class Team(models.Model):
     position = models.CharField(max_length=200)
     other_position=models.CharField(max_length=200,null=True,blank=True)
     board_member=models.BooleanField(default=False)
+    management_team=models.BooleanField(default=False)
     linkedin=models.URLField(null=True,blank=True)
     order = models.IntegerField(default=0)
     

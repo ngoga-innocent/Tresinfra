@@ -4,7 +4,7 @@ from .models import Carousel,OurService,Achievement,Blog,Team,MisconductReport
 # admin.site.register(Carousel)
 admin.site.register(OurService)
 admin.site.register(Achievement)
-admin.site.register(Team)
+# admin.site.register(Team)
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'date', 'slug')
@@ -15,3 +15,6 @@ class MisconductReportAdmin(admin.ModelAdmin):
 @admin.register(Carousel)
 class CarouselAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'subtitle', 'created_at')
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'position', 'board_member', 'management_team')
