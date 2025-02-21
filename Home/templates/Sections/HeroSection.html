@@ -11,13 +11,13 @@
           <img src="{{ item.image.url }}" alt="{{ item.title }}" class="object-cover w-full h-full" />
           
           <!-- Text Content (Initially Hidden) -->
-          <div class="content flex flex-col gap-y-2 absolute z-50 top-[30vh] left-[10vw] md:left-[30vw] hidden">
+          {% comment %} <div class="content flex flex-col gap-y-2 absolute z-50 top-[30vh] left-[10vw] md:left-[30vw] hidden">
             <div style="z-index: 1000;" class="flex flex-col space-y-2">
               <h1 class="font-bold text-white w-[80vw] md:w-[35vw] text-wrap text-2xl md:text-4xl">{{ item.title }}</h1>
               <p class="text-white font-bold text-lg w-[90vw] md:w-[50vw] text-wrap">{{ item.subtitle }}</p>
             </div>
             <a href="#" class="bg-orange-300 w-fit py-2 px-4 rounded-full text-white">Learn More</a>
-          </div>
+          </div> {% endcomment %}
         </div>
       {% endfor %}
     {% endif %}
@@ -36,18 +36,6 @@
 
 <!-- CSS -->
 <style>
-  /* Vertical Dots */
-  .slick-dots {
-    position: absolute;
-    bottom: 36%;
-    left: 10vw; /* Adjusted for responsiveness */
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 10;
-  }
-
   /* Slide-in Animation */
   @keyframes slideIn {
     from {
@@ -62,27 +50,6 @@
 
   .animate-bar {
     animation: slideIn 1s ease-in-out forwards;
-  }
-
-  /* Slick Dots Customization */
-  .slick-dots li {
-    margin: 0;
-    width: 10px;
-    height: 10px;
-  }
-
-  .slick-dots li button {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #e5e5e5;
-    opacity: 0.7;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-  }
-
-  .slick-dots li.slick-active button {
-    background-color: #ef4444;
-    opacity: 1;
   }
 
   /* Fade-in Effect for Content */
@@ -101,15 +68,6 @@
 
   /* Adjustments for Small Screens */
   @media (max-width: 768px) {
-    .slick-dots {
-      left: 5px;
-    }
-
-    .slick-dots li button {
-      width: 10px;
-      height: 10px;
-    }
-
     .content {
       top: 20vh; /* Adjust position for smaller screens */
       left: 5vw;
@@ -127,21 +85,14 @@
     $('#carousel').slick({
       autoplay: true,
       autoplaySpeed: 4000,
-      dots: true,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
       cssEase: 'linear',
-      arrows: false,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            dots: true
-          }
-        }
-      ]
+      arrows: false, // No dots, no arrows
+    
+      dots: false, 
     });
 
     // Fade-in Animation for Slide Content
@@ -158,9 +109,7 @@
       $('.slick-current .content').removeClass('hidden').addClass('fade-in');
     }, 500);
   });
-</script>
 
-<script>
   // Generate Random Bars
   function generateRandomBars() {
     const container = document.getElementById('random-bars');

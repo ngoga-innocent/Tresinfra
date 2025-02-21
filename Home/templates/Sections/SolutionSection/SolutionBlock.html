@@ -1,6 +1,6 @@
 {% load static %}
 <section style="z-index: 1;" class="flex flex-col bg-gray-100 py-20">
-    <div class="flex flex-col w-[20vw] py-5  mx-[20vw] gap-y-3">
+    {% comment %} <div class="flex flex-col w-[20vw] py-5  mx-[20vw] gap-y-3">
         <div id="built_to_suit" class="built_to_suit solutions group">
             <h1>Built-to-Suit</h1>
             <div class="solution_line"></div>
@@ -27,7 +27,7 @@
         
        
         
-    </div>
+    </div> {% endcomment %}
     {% comment %} Solution Description {% endcomment %}
     {% comment %} <div class="flex flex-col relative h-auto">
         <div class="flex flex-row relative items-start justify-center w-[50vw] mx-auto gap-x-3 my-32">
@@ -161,7 +161,7 @@
             </button>
         </div>
     </div> {% endcomment %}
-    <div class="overflow-x-auto w-[90vw] mx-auto my-7">
+    <div style="z-index:100" class="overflow-x-auto w-[90vw] mx-auto my-7">
         <table class="min-w-full border border-gray-300 my-7">
             <thead>
                 <tr class="bg-gray-200 text-gray-700">
@@ -174,7 +174,8 @@
                 <tr>
                     <td class="border border-gray-300 px-4 py-2 font-semibold">Built-to-Suit</td>
                     <td class="border border-gray-300 px-4 py-2">
-                        Tres handles the entire process of constructing telecom towers, including site acquisition, permits, project management, and equipment installation.
+                        <p>Tres handles the entire process of constructing state-of-the-art telecom towers, from Site Analysis & Site Acquisition, permit applications for construction of Site, Project Management and Equipment Installation’s Tower & Power before final delivery to our clients. We tailor our services to the passive infrastructure needs, including site, tower and power supply. Once the site is complete, we evaluate its potential for co-location and seek ways to attract additional tenants to lease space. In challenging areas for site acquisition, we offer the option of constructing sites that require less land, such as rooftop installations.</p>
+                        <p>Our Built-to-Suit product provides clients with a variety of solutions customized to their specific needs and capacities. This offer is complemented by our Operation & Maintenance (O&M) services, through which we manage and maintain the sites on behalf of our tenants. This solution delivers numerous benefits, such as enhanced service quality and range, and improved cash flow management. Built-to-Suit ensures that carriers receive the telecom infrastructure they need to expand their connectivity and reach remote areas, while significantly reducing costs through capital expense savings.</p>
                     </td>
                     <td class="border border-gray-300 px-4 py-2">
                         <ul class="list-disc pl-5">
@@ -186,21 +187,25 @@
                     </td>
                 </tr>
                 <tr class="bg-gray-100">
-                    <td class="border border-gray-300 px-4 py-2 font-semibold">Colocation</td>
+                    <td class="border border-gray-300 px-4 py-2 font-semibold">Co-location</td>
                     <td class="border border-gray-300 px-4 py-2">
-                        Tower companies lease tower structures and associated passive equipment to mobile network operators (MNOs).
+                        <p>Tower companies generally own or lease tower structures and the associated passive equipment through long-term agreements. Meanwhile, mobile network operators (MNOs) act as tenants, owning and operating their active equipment while leasing vertical space on the tower and portions of the land beneath it for their installations. This arrangement, known as co-location, involves a single tower structure hosting multiple antennas operated by different MNOs.</p>
+                        <p>The co-location landscape is evolving due to several factors, such as the demand to deploy new technologies like LTE on existing sites, the need for additional radio capacity, the growing prevalence of smaller-sized equipment, the adoption of DC power and fiber connections from ground equipment to tower equipment, and increased weight and wind load requirements.</p>
+                        <p>These developments are significantly impacting the tower industry. As a result, when towers are assessed to accommodate these changes, they are often found to be overloaded, necessitating structural upgrades or reinforcement.</p>
                     </td>
                     <td class="border border-gray-300 px-4 py-2">
                         <ul class="list-disc pl-5">
-                            <li>Generates additional revenue without constructing new towers</li>
-                            <li>Wireless tenants save costs and time by co-locating</li>
+                            <li>Create additional revenue streams without the expenses associated with constructing new towers. This strategy allows tower companies to optimize their current infrastructure, making it a financially advantageous choice for both the tower company and wireless tenants.</li>
+                            <li>Wireless tenants can reduce capital expenditure and save time by co-locating on existing towers, bypassing the costs involved in building their own infrastructure.</li>
                         </ul>
                     </td>
                 </tr>
                 <tr>
                     <td class="border border-gray-300 px-4 py-2 font-semibold">In-Building Solution (IBS)</td>
                     <td class="border border-gray-300 px-4 py-2">
-                        In-building wireless solutions enhance mobile connectivity within buildings using distributed antenna systems (DAS), small cells, or repeaters.
+                        <p>In-building wireless solutions provide comprehensive mobile coverage for indoor environments, addressing issues of weak or nonexistent connectivity often caused by thick walls or steel frameworks. This technology alleviates the in-premise users experience when unable to make calls or access the internet in their desired locations.
+                            In-building wireless solutions are systems designed to enhance cellular connectivity within buildings or venues. They typically involve the installation of distributed antenna systems (DAS), small cells, or repeaters to ensure strong and consistent signal coverage throughout the premises.</p>
+                            <p>In-building wireless solutions are essential for delivering reliable 4G/5G connectivity in modern buildings and venues. By addressing connectivity challenges, these systems enhance user experience, support operational efficiency, and add value to the property. Building owners and operators should carefully assess their needs, collaborate with experts, and invest in scalable, future-proof solutions to maximize the benefits of in-building wireless technology.</p>
                     </td>
                     <td class="border border-gray-300 px-4 py-2">
                         <ul class="list-disc pl-5">

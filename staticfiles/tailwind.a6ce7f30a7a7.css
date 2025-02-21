@@ -727,6 +727,10 @@ video {
   left: 0px;
 }
 
+.left-10 {
+  left: 2.5rem;
+}
+
 .left-5 {
   left: 1.25rem;
 }
@@ -975,6 +979,14 @@ video {
   margin-bottom: 2rem;
 }
 
+.-ml-20 {
+  margin-left: -5rem;
+}
+
+.-ml-32 {
+  margin-left: -8rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1003,12 +1015,24 @@ video {
   margin-bottom: 2rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
 }
 
+.ml-20 {
+  margin-left: 5rem;
+}
+
 .ml-3 {
   margin-left: 0.75rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .ml-auto {
@@ -1428,10 +1452,6 @@ video {
   width: 2px;
 }
 
-.w-\[40vw\] {
-  width: 40vw;
-}
-
 .w-\[4px\] {
   width: 4px;
 }
@@ -1517,12 +1537,12 @@ video {
   min-width: 100%;
 }
 
-.min-w-\[50vw\] {
-  min-width: 50vw;
-}
-
 .max-w-14 {
   max-width: 3.5rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .max-w-3xl {
@@ -1567,6 +1587,10 @@ video {
 
 .flex-shrink {
   flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .shrink {
@@ -3222,6 +3246,10 @@ video {
   padding-top: 0.5rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -4027,7 +4055,7 @@ html, body {
 
 @media(max-width: 768px) {
   .whistle-blowing{
-    background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
+    background-image: url('./img/img-report-banner.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: bottom;
@@ -4035,7 +4063,7 @@ html, body {
 }
 
 .hero_section{
-  background-image: url("./img/impact.8673ea8a2eba.jpg");
+  background-image: url('./img/impact.jpg');
   background-size: cover;
 }
 
@@ -4079,7 +4107,7 @@ html, body {
 
 .footer {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                      url("./img/rooftop-site.34b925a30ef5.jpg");
+                      url('./img/rooftop-site.jpg');
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4089,7 +4117,7 @@ html, body {
 }
 
 .services{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/network_optimization_bg.c050a1d0e569.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/network_optimization_bg.jpg');
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4103,7 +4131,7 @@ html, body {
 }
 
 .contact_Us{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/home_pic2.5980664f5789.JPG");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/home_pic2.JPG');
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4112,7 +4140,7 @@ html, body {
 }
 
 .blog{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/blog-bg.7517d77fbd3e.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/blog-bg.jpg');
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4121,19 +4149,19 @@ html, body {
 }
 
 .solution1{
-  background-image: url("./img/bts_bg.f0c4b7cb15b8.jpg");
+  background-image: url('./img/bts_bg.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .solution2{
-  background-image: url("./img/colocation_bg.6f7fdaaa8540.jpg");
+  background-image: url('./img/colocation_bg.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .solution3{
-  background-image: url("./img/build.96ee2abc8e50.jpg");
+  background-image: url('./img/build.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -4405,7 +4433,13 @@ html, body {
 }
 
 .solution_hero{
-  background-image: url("./img/banner4.94262cdffdaa.jpg");
+  background-image: url('./img/banner4.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.solution_hero1{
+  background-image: url('./img/solution_bg2.jpeg');
   background-size: cover;
   background-attachment: fixed;
 }
@@ -4507,7 +4541,7 @@ html, body {
 }
 
 .team_hero{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("./img/teamwork.acc4c82b0af4.png");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/teamwork.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -4590,7 +4624,14 @@ html, body {
 }
 
 .whistle-blowing{
-  background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
+  background-image: url('./img/img-report-banner.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center right;
+}
+
+.wwhistle_bg{
+  background-image: url('./img/w');
   background-size: cover;
   background-attachment: fixed;
   background-position: center right;

@@ -10,6 +10,9 @@ urlpatterns=[
      path('esg/',Esg,name="esg"),
       path("contact/", contact_view, name="contact"),
       path("solutions/", Solutions, name="solutions"),
+      path("solutions/built-to-suit", Solutions, kwargs={'slug': 'built-to-suit'}, name="built-to-suit"),
+      path("solutions/co-location", Solutions, kwargs={'slug': 'co-location'}, name="co-location"),
+      path("solutions/ibs", Solutions, kwargs={'slug': 'ibs'}, name="ibs"),
       path("team/", JoinTeam, name="join_team"),
       path("whistle-blowing/", WhistleBlowing.as_view(), name="whistle_blowing"),
       

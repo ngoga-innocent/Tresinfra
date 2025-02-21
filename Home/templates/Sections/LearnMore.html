@@ -1,3 +1,4 @@
+{% load static %}
 <section  data-aos="fade-up" data-aos-easing="ease-out-cubic"
 data-aos-duration="5000" class="flex flex-col py-7  w-full items-center h-screen relative">
   <h1 class="text-4xl font-bold my-3" data-aos="fade-left" data-aos-delay="500">OUR SOLUTIONS</h1>
@@ -188,10 +189,12 @@ data-aos-duration="5000" class="flex flex-col py-7  w-full items-center h-screen
         in a cost-effective manner.</p>
     </a>
   </div>
-  <div class="flex flex-row gap-x-2">
-    <button class="prev-btn w-4 h-4 rounded-full bg-gray-900 active" ></button>
+  <div class="flex flex-row gap-x-2"></div>
+  
+
+    {% comment %} <button class="prev-btn w-4 h-4 rounded-full bg-gray-900 active" ></button>
     <button class="next-btn w-4 h-4 rounded-full bg-gray-900"></button>
-  </div>
+  </div> {% endcomment %}
   {% comment %} <a class="link_button group my-4" href="#">EXPLORE MORE SOLUTIONS <i class="fa fa-chevron-right group-hover:translate-x-2 transition-all ease-in-out duration-5000" aria-hidden="true"></i></a> {% endcomment %}
 </section>
 <style>

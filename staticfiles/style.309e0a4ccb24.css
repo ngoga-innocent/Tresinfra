@@ -45,7 +45,10 @@ html, body {
     background-position: bottom;
   }
 }
-
+.hero_section{
+  background-image: url("./img/impact.8673ea8a2eba.jpg");
+  background-size: cover;
+}
 /* .carousel-container {
     display: flex;
     overflow: hidden;
@@ -75,7 +78,8 @@ html, body {
     z-index: 1000;
     /* background-color: transparent; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-    font-family: "Teko", serif;
+    /* font-family: "Teko", serif; */
+    font-family: Arial, sans-serif;
     text-transform: uppercase;
     font-size: small;
     color: whitesmoke;
@@ -231,6 +235,11 @@ html, body {
     background-size: cover;
     background-attachment: fixed;
   }
+  .solution_hero1{
+    background-image: url("./img/solution_bg2.1de483da71c2.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
   .solutions{
     @apply relative  flex flex-row items-center justify-center gap-x-4 hover:cursor-pointer
   }
@@ -238,7 +247,7 @@ html, body {
     @apply absolute opacity-0 group-hover:opacity-100 rotate-90 -left-[7vh] bg-white z-50 rounded-full border border-my_orange text-my_orange py-1 px-3
   }
   .solution_line{
-    @apply h-[4px] flex-1 bg-zinc-900 group-hover:bg-my_orange rounded-full
+    @apply h-[4px] flex-1 bg-my_orange group-hover:bg-my_orange rounded-full
   }
   .solution h1{
     @apply group-hover:text-my_orange text-heading
@@ -250,6 +259,9 @@ html, body {
     @apply transition-all duration-500 ease-in-out
   }
   .solution_description h5{
+    @apply text-my_orange font-bold text-lg
+  }
+  .solution_heading {
     @apply text-my_orange font-bold text-lg
   }
   .solution_description ol{
@@ -284,6 +296,12 @@ html, body {
 }
 .whistle-blowing{
   background-image: url("./img/img-report-banner.2d11ef3267ca.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center right;
+}
+.wwhistle_bg{
+  background-image: url("./img/tower_bg.0ee3e186c612.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center right;

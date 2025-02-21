@@ -86,8 +86,15 @@ def blog_detail_view(request, slug):
     return render(request, 'blog_detail.html', {'blog': blog})
 def OurMarkets(request):
     return render(request, 'our_markets.html')
-def Solutions(request):
-    return render(request, 'solutions.html')
+def Solutions(request,*args,**kwargs):
+    if kwargs.get('slug') == 'built-to-suit':
+        return render(request, 'Sections/SolutionSection/built_to_suit.html')
+    elif kwargs.get('slug') == 'co-location':
+        return render(request, 'Sections/SolutionSection/co-location.html')
+    elif kwargs.get('slug') == 'ibs':
+        return render(request, 'Sections/SolutionSection/ibs.html')
+    else:
+        return render(request, 'solutions.html')
 def JoinTeam(request):
     return render(request, 'join_team.html')
 class WhistleBlowing(View):

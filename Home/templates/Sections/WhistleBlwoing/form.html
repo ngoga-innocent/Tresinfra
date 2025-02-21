@@ -1,5 +1,5 @@
 {% load static %}
-<section class="flex flex-col items-center py-12 bg-heading/30 rounded-b-lg mb-4">
+<section class="flex flex-col items-center py-12 bg-heading/30 wwhistle_bg rounded-b-lg mb-4">
   {% if messages %} {% for message in messages %}
   <div
     class="{% if message.tags == 'success' %} bg-heading/60 w-fit px-3 py-4 rounded-lg {% else %} text-my_orange/20 {% endif %}"
@@ -50,7 +50,7 @@
             type="text"
             name="names"
             placeholder="Type your Name..."
-            required
+            
             class="flex flex-col rounded outline-none border-heading w-1/2 p-2 border"
             id=""
           />
@@ -64,7 +64,7 @@
               type="email"
               name="names"
               placeholder="Type your Email..."
-              required
+              
               class="flex flex-col rounded outline-none border-heading w-[100%] p-2 border"
               id=""
             />
@@ -77,7 +77,7 @@
               type="text"
               name="names"
               placeholder="Type your phone number..."
-              required
+              
               class="flex flex-col rounded outline-none border-heading w-[100%] p-2 border"
               id=""
             />
