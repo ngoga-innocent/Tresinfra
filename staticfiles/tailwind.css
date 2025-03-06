@@ -4131,7 +4131,7 @@ html, body {
 }
 
 .contact_Us{
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/home_pic2.JPG');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./img/contactus.jpeg');
   background-size: cover;
   /* Ensure the background image covers the entire footer */
   background-position: center;
@@ -4148,7 +4148,7 @@ html, body {
   background-repeat: no-repeat
 }
 
-.solution1{
+.solution3{
   background-image: url('./img/bts_bg.jpg');
   background-size: cover;
   background-position: center;
@@ -4160,7 +4160,7 @@ html, body {
   background-position: center;
 }
 
-.solution3{
+.solution1{
   background-image: url('./img/build.jpg');
   background-size: cover;
   background-position: center;
@@ -4444,6 +4444,12 @@ html, body {
   background-attachment: fixed;
 }
 
+.solution_hero2{
+  background-image: url('./img/tower_bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .solutions {
   position: relative;
   display: flex;
@@ -4625,6 +4631,13 @@ html, body {
 
 .whistle-blowing{
   background-image: url('./img/img-report-banner.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center right;
+}
+
+.wwhistle_bg{
+  background-image: url('./img/tower_bg.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center right;

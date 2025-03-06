@@ -68,7 +68,7 @@ def contact_view(request):
                 subject=subject,
                 body=message,
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                to=[recipient_email],
+                to=[recipient_email,"ntwali.raissa@tresinfra.com"],
             )
             email.content_subtype = "html"  # Set content type to HTML
             email.send()
