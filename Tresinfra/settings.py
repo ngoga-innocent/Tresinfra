@@ -3,7 +3,7 @@
 """
 import os
 from pathlib import Path
-
+import cloudinary
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -161,6 +161,12 @@ CLOUDINARY_STORAGE={
     'API_KEY':'167768518225832',
     'API_SECRET':'pbEaQpZInExogDduBvYSRadLcs4'
 }
+cloudinary.config( 
+  cloud_name = "dk9bsucmz", 
+  api_key = "167768518225832", 
+  api_secret = "pbEaQpZInExogDduBvYSRadLcs4",
+  secure = True
+)
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "TRENSINFRA",
