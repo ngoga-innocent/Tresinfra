@@ -3,11 +3,17 @@ import uuid
 from django.utils import timezone
 from django.utils.text import slugify
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Carousel(models.Model):
     id=models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False,unique=True)
     image=models.ImageField(upload_to='Homecarousel/')
+    video = CloudinaryField(
+    'media',
+    resource_type='auto',  # This is key: it auto-detects image or video
+    blank=True,
+    null=True
+)
     title=models.TextField(blank=True,null=True)
     subtitle=models.TextField(blank=True,null=True)
     order=models.PositiveIntegerField(default=0)

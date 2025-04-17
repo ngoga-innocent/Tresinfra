@@ -209,7 +209,7 @@ html, body {
       @apply hover:text-my_orange transition-all ease-in-out;
     }
   .mission_div{
-    @apply flex flex-col items-center relative bg-white rounded-b-lg py-7 mx-3 px-4
+    @apply flex flex-col items-center relative bg-white rounded-b-lg py-7 mx-3 px-4 
   }
   .mission_icon{
     @apply w-[8vw] h-[8vw] absolute -top-[6vh] rounded-full flex flex-col items-center justify-center bg-white shadow-sm shadow-black z-10 
@@ -310,5 +310,6 @@ html, body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center right;
+  /* color:rgb(37, 55, 70) */
 }
 

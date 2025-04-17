@@ -30,7 +30,11 @@ class Home(View):
         return render(request, './home.html',context)
 def filter_projects(request):
     category = request.GET.get('category')  # Get the category from the request
-    projects = Achievement.objects.filter(category=category)
+    if not category or category == "all":
+        projects = Achievement.objects.all()
+    else:
+        projects = Achievement.objects.filter(category=category)
+    
     project_list = [
         {
             'id': project.id,

@@ -8,8 +8,15 @@
     {% if carousel %}
       {% for item in carousel %}
         <div class="w-full h-screen md:h-full relative">
-          <img src="{{ item.image.url }}" alt="{{ item.title }}" class="object-cover w-full h-full" />
           
+          {% if item.video.resource_type == "video" %}
+  <video class="object-cover w-full h-full" autoplay muted loop>
+    <source src="{{ item.video.url }}" type="video/mp4" />
+  </video>
+{% else %}
+  <img src="{{ item.media.url }}" alt="{{ item.video.url }}" class="object-cover w-full h-full" />
+{% endif %}
+
           <!-- Text Content (Initially Hidden) -->
           {% comment %} <div class="content flex flex-col gap-y-2 absolute z-50 top-[30vh] left-[10vw] md:left-[30vw] hidden">
             <div style="z-index: 1000;" class="flex flex-col space-y-2">
@@ -101,7 +108,7 @@
       const currentContent = $(`.slick-slide[data-slick-index="${currentSlide}"] .content`);
       setTimeout(() => {
         currentContent.removeClass('hidden').addClass('fade-in');
-      }, 500);
+      }, 5000);
     });
 
     // Trigger first slide manually on load

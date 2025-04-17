@@ -53,6 +53,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tresinfra</title>
     <link rel="stylesheet" href="{%static 'tailwind.css' %}" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}" />
     <link rel="stylesheet" href="{%static 'css/all.min.css' %}" />
   </head>
@@ -61,9 +62,13 @@
       {% include './Sections/Navbar.html' %}
     </section>
     {% block Content %}{% endblock Content %}
-    <a href="https://api.whatsapp.com/send?phone=0788310255" class="fixed bottom-4 right-4 rounded-full motion-safe:animate-bounce w-[5vw] text-white h-[5vw] flex flex-col items-center justify-center  rounded-full ">
-      <img src="{% static 'img/whatsapp_icon.png' %}" alt="">
-    </a>
+    <a href="https://api.whatsapp.com/send?phone=0788310255"
+   class="fixed bottom-4 right-4 rounded-full motion-safe:animate-bounce 
+          w-[40px] h-[40px] md:w-[40px] md:h-[40px] lg:w-[5vw] lg:h-[5vw] 
+          text-white flex items-center justify-center">
+  <img src="{% static 'img/whatsapp_icon.png' %}" alt="">
+</a>
+
   </body>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

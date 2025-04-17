@@ -1,6 +1,6 @@
 {% load static %}
-<section class="bg-heading h-screen   items-center flex flex-col" style="z-index: 10;">
-    <div class="mission_arc left-0 absolute">
+<section class="bg-heading h-screen w-screen overflow-x-hidden max-w-screen  items-center flex flex-col" style="z-index: 10;">
+    <div class="mission_arc left-0 absolute -z-20 md:z-0">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="248.857px" height="417.031px"
              viewBox="339.744 123.173 248.857 417.031" enable-background="new 339.744 123.173 248.857 417.031"
@@ -31,8 +31,8 @@
                 </g>
             </svg>
     </div> 
-    <div class="grid grid-cols-3 w-[80vw] gap-x-12 mx-auto">
-        <div class="mission_div">
+    <div class="grid grid-cols-1 gap-y-1 md:grid-cols-3 w-[80vw] md:gap-x-12 mx-auto">
+        <div class="mission_div ">
             <div class="mission_icon">
                 <img src="{% static 'img/aboutus_mission1.svg' %}"  alt="">
             </div>
@@ -56,23 +56,23 @@
     <h1 class="text-white text-4xl font-bold my-8">What We Do</h1> 
     <p class="text-white w-[60vw] text-wrap mx-auto text-center">TRES’s “raison d’être” is “getting any Rwandan, and African in general, having access to a flawless and affordable connectivity.”</p>
 
-    <div class="grid grid-cols-4 items-start my-12 w-[80vw] gap-x-4 mx-auto">
-        <div class="service_div">
+    <div class="grid grid-cols-1 md:grid-cols-4 items-start my-12 w-[80vw] gap-x-4 gap-y-2  mx-auto">
+        <div class="service_div border border-white md:border-0 rounded-lg">
             <img src="{% static 'img/about1.png' %}" alt="">
             <p>Building and managing towers on demand on behalf of network operators</p>
         </div>
-        <div class="service_div">
+        <div class="service_div border border-white md:border-0 rounded-lg">
             <img src="{% static 'img/about2.png' %}" alt="">
             <p>Leasing space on our network of towers to telecom companies, government and private entities</p>
         </div>
-        <div class="service_div">
+        <div class="service_div border border-white md:border-0 rounded-lg">
             <img src="{% static 'img/about3.png' %}" alt="">
             <p>Providing In-Building-Solution “IBS” to boost superior internal coverage with cutting-edge technologies</p>
         </div>
-        <div class="service_div">
+        <div class="service_div border border-white md:border-0 rounded-lg">
             <img src="{% static 'img/about4.png' %}" alt="">
             <p>Offering operations and maintenance services, including preventive maintenance, fault management, energy management and other services</p>
         </div>
     </div>
-    <p class="text-neutral-200">We also plan to extend our offerings to further advanced services such as Small Cells, Fiber to The Tower “FTTT” and Smart City Infrastructure</p>
+    <p class="text-neutral-200 text-center">We also plan to extend our offerings to further advanced services such as Small Cells, Fiber to The Tower “FTTT” and Smart City Infrastructure</p>
 </section>

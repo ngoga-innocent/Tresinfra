@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% block Content %}
-<section id="solution">{% include './Sections/SolutionSection/hero.html' %}</section>
+<div class="w-screen max-w-screen overflow-hidden">
+    <section id="solution">{% include './Sections/SolutionSection/hero.html' %}</section>
 <section id="solutions">{% include './Sections/SolutionSection/SolutionBlock.html' %}</section>
 <section>{% include './Sections/footer.html' %}</section>
+</div>
 {% endblock Content %}

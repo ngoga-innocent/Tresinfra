@@ -1,10 +1,10 @@
 {% load static %}
 <section class="w-full flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100">
     <div class="container mx-auto flex flex-col py-7 items-center justify-center">
-        <div class="flex flex-row items-center gap-x-4">
-            <button class="text-my_orange font-bold text-lg py-2 px-4 active_teamsection management rounded-full transition-all management ease-in-out ">MANAGEMENT TEAM</button>
-            <button class="text-my_orange font-bold text-xl py-2 px-4 rounded-full transition-all ease-in-out team">TEAM</button>
-            <button class="text-my_orange font-bold text-xl py-2 px-4 rounded-full transition-all ease-in-out board">BOARD OF DIRECTORS</button>
+        <div class="flex flex-row w-[90%] mx-auto items-center gap-x-4">
+            <button class="text-my_orange font-bold text-md md:text-lg py-2 px-4 active_teamsection management rounded-full transition-all management ease-in-out ">MANAGEMENT TEAM</button>
+            <button class="text-my_orange font-bold text-md md:text-xl py-2 px-4 rounded-full transition-all ease-in-out team">TEAM</button>
+            <button class="text-my_orange font-bold text-md md:text-xl py-2 px-4 rounded-full transition-all ease-in-out board">BOARD OF DIRECTORS</button>
         </div>
         {% comment %} Team {% endcomment %}
         <div class="hidden team_members grid grid-cols-1  md:grid-cols-4 w-[90%] items-center justify-center gap-3 my-12">
@@ -30,7 +30,7 @@
             {% endif %}
         </div>
         {% comment %} Management Team {% endcomment %}
-        <div class=" management_members grid grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
+        <div class=" management_members grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
             {% if team_members %}
                 {% for member in management_members %}
                 <div class="flex flex-col pb-4 bg-white items-center gap-y-3 md:rounded-lg h-[50vh] rounded-md">
@@ -53,7 +53,7 @@
             {% endif %}
         </div>
         {% comment %} Board Of Directors {% endcomment %}
-        <div class="hidden board_members grid grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
+        <div class="hidden board_members grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto w-[80%] items-center justify-center gap-y-14 my-12">
             {% if board_members %}
                 {% for member in board_members %}
                 <div class="flex flex-col pb-4 bg-white items-center gap-y-3 md:rounded-lg h-[50vh] rounded-md">

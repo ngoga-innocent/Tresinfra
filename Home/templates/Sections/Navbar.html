@@ -11,7 +11,7 @@
     <!-- Navigation Section -->
     <div>
         <!-- Hamburger Menu (Visible on Mobile) -->
-        <div class="md:hidden">
+        <div class="md:hidden py-7">
             <button id="menu-toggle">
                 <i id="menu-icon" class="fa fa-bars text-red-700 text-3xl flex" aria-hidden="true"></i>
                 <i id="close-icon" class="hidden fa fa-times text-red-700 text-3xl" aria-hidden="true"></i>
@@ -36,9 +36,9 @@
                     <li>
                         <a class="link" href="{% url 'about_us' %}#mission">Mission</a>
                     </li>
-                    <li>
+                    {% comment %} <li>
                         <a class="link" href="{% url 'about_us' %}#policy">What we do</a>
-                    </li>
+                    </li> {% endcomment %}
                     {% comment %} <li>
                         <a class="link" href="#">How we work</a>
                     </li> {% endcomment %}
@@ -138,30 +138,37 @@
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const aboutToggle = document.getElementById("about-toggle");
-        const aboutMenu = document.getElementById("about-menu");
+        function setupDropdown(toggleId, menuId) {
+            const toggle = document.getElementById(toggleId);
+            const menu = document.getElementById(menuId);
 
-        aboutToggle.addEventListener("click", () => {
-            aboutMenu.classList.toggle(" opacity-0");
-            aboutMenu.classList.toggle("scale-y-0");
-            aboutMenu.classList.toggle("max-h-0");
-           
-        });
+            toggle.addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent click from bubbling up
+                menu.classList.toggle("opacity-0");
+                menu.classList.toggle("scale-y-0");
+                menu.classList.toggle("max-h-0");
+
+                // Close other open dropdowns
+                document.querySelectorAll(".dropdown-menu").forEach((dropdown) => {
+                    if (dropdown !== menu) {
+                        dropdown.classList.add("opacity-0", "scale-y-0", "max-h-0");
+                    }
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", (event) => {
+                if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                    menu.classList.add("opacity-0", "scale-y-0", "max-h-0");
+                }
+            });
+        }
+
+        setupDropdown("about-toggle", "about-menu");
+        setupDropdown("solution-toggle", "solution-menu");
     });
 </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const solutionToggle = document.getElementById("solution-toggle");
-        const solutionMenu = document.getElementById("solution-menu");
 
-        solutionToggle.addEventListener("click", () => {
-            solutionMenu.classList.toggle(" opacity-0");
-            solutionMenu.classList.toggle("scale-y-0");
-            solutionMenu.classList.toggle("max-h-0");
-           
-        });
-    });
-</script>
 <script>
     $(document).ready(function () {
         $(window).scroll(function () {
